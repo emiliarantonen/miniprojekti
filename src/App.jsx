@@ -14,6 +14,7 @@ function App() {
   const [newVolume, setNewVolume] = useState('')
   const [newPages, setNewPages] = useState('')
 
+  //TODO: tarkistus, ettei tyhjää lomaketta tallenneta?
   const lisaaArtikkeli = (event) => {
     event.preventDefault()    
     const artikkeliObject = {
@@ -29,6 +30,7 @@ function App() {
     console.log(artikkeliObject)
     
     setArtikkelit(artikkelit.concat(artikkeliObject))
+    console.log(artikkelit)
     setNewKey('')
     setNewAuthor('')
     setNewTitle('')
@@ -41,12 +43,10 @@ function App() {
 
   const handleKeyChange = (event) => {
     setNewKey(event.target.value)
-    console.log("handle key")
   }
 
   const handleAuthorChange = (event) => {
     setNewAuthor(event.target.value)
-    console.log("handle key")
   }
 
   const handleTitleChange = (event) => {
@@ -90,6 +90,18 @@ function App() {
           handlePagesChange={handlePagesChange}
         />
         <h2>Lähteet</h2>
+        {artikkelit.map((artikkeli, indeksi) => ( //tänne jotkut tarkistukset?
+          <div key={indeksi} className="artikkelituloste">
+            <p> [{indeksi+1}] </p>
+            <p> {artikkeli.author} </p>
+            <p> {artikkeli.title} </p>
+            <p> {artikkeli.journal} </p>
+            <p> {artikkeli.year} </p>
+            <p> {artikkeli.volume} </p>
+            <p> {artikkeli.pages} </p>
+          </div>
+        ))}
+
     </>
   )
 }
