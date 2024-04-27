@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import Lisaa from './components/lisaa'
+import './App.css'
 
 function App() {
   const [artikkelit, setArtikkelit] = useState([])
@@ -90,15 +91,15 @@ function App() {
           handlePagesChange={handlePagesChange}
         />
         <h2>Lähteet</h2>
-        {artikkelit.map((artikkeli, indeksi) => ( //tänne jotkut tarkistukset?
+        {artikkelit.map((artikkeli, indeksi) => ( //tänne jotkut tarkistukset ettei tuu tyhjiä esim sivunmr?
           <div key={indeksi} className="artikkelituloste">
             <p> [{indeksi+1}] </p>
-            <p> {artikkeli.author} </p>
-            <p> {artikkeli.title} </p>
-            <p> {artikkeli.journal} </p>
-            <p> {artikkeli.year} </p>
-            <p> {artikkeli.volume} </p>
-            <p> {artikkeli.pages} </p>
+            <p> {artikkeli.author}. </p>
+            <p className="artikkelititle"> {artikkeli.title}. </p>
+            <p className="artikkelijournal"> {artikkeli.journal}. </p>
+            <p> {artikkeli.year}. </p>
+            <p> {artikkeli.volume}. </p>
+            <p> {artikkeli.pages}. </p>
           </div>
         ))}
 
