@@ -15,9 +15,14 @@ function App() {
   const [newVolume, setNewVolume] = useState('')
   const [newPages, setNewPages] = useState('')
 
-  //TODO: tarkistus, ettei tyhjää lomaketta tallenneta?
   const lisaaArtikkeli = (event) => {
     event.preventDefault()    
+
+    if(!newKey || !newAuthor || !newTitle || !newJournal ||!newYear || !newVolume || !newPages){
+      alert('Kaikkien kenttien täyttäminen on pakollista')
+      return;
+    }
+
     const artikkeliObject = {
       key: newKey,
       author: newAuthor,
@@ -94,6 +99,7 @@ function App() {
         {artikkelit.map((artikkeli, indeksi) => ( //tänne jotkut tarkistukset ettei tuu tyhjiä esim sivunmr?
           <div key={indeksi} className="artikkelituloste">
             <p> [{indeksi+1}] </p>
+            <p> {artikkeli.key}. </p>
             <p> {artikkeli.author}. </p>
             <p className="artikkelititle"> {artikkeli.title}. </p>
             <p className="artikkelijournal"> {artikkeli.journal}. </p>
