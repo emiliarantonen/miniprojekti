@@ -15,11 +15,33 @@ function App() {
   const [newVolume, setNewVolume] = useState('')
   const [newPages, setNewPages] = useState('')
 
+  //tarkistus että vuosinumero on 4 numeroa pitkä
+  //ja pienempi kuin tämä vuosi + 1
+  const validateYear = (year) => {
+    const currentYear = new Date().getFullYear();
+    return /^\d{4}$/.test(year) && parseInt(year) < currentYear+1;
+  }
+
+  const validatePages = (pages) => {
+    return parseInt(pages) > 0
+  }
+
   const lisaaArtikkeli = (event) => {
     event.preventDefault()    
-
+  
     if(!newKey || !newAuthor || !newTitle || !newJournal ||!newYear || !newVolume || !newPages){
       alert('Kaikkien kenttien täyttäminen on pakollista')
+      return;
+    }
+
+    if (!validatePages(newPages)) {
+      alert('Anna kelvollinen luku sivuille!')
+      return;
+    }
+
+    if (!validateYear(newYear)) {
+      //jotenki eritaval vois kirjottaa
+      alert('Vuosiluvun tulee olla neljä numeroa pitkä ja pienempi tai yhtäsuuri kuin nykyinen.');
       return;
     }
 
