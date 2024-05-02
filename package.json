@@ -37,5 +37,8 @@
       "^.+\\.svg$": "jest-svg-transformer",
       "^.+\\.(css|less|scss)$": "identity-obj-proxy"
     }
+  },
+  "transform": {
+    "^.+\\.jsx?$": "babel-jest"
   }
 }
