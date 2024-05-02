@@ -40,8 +40,7 @@ function App() {
     }
 
     if (!validateYear(newYear)) {
-      //jotenki eritaval vois kirjottaa
-      alert('Vuosiluvun tulee olla neljä numeroa pitkä ja pienempi tai yhtäsuuri kuin nykyinen.');
+      alert('Vuosiluvun tulee olla nelinumeroinen ja maksimissaan tämämän hetkinen vuosiluku.');
       return;
     }
 
@@ -97,6 +96,18 @@ function App() {
     setNewPages(event.target.value)
   }
 
+    // Funktio BibTeX-muotoisen merkkijonon rakentamiseksi
+    const generateBibTeX = (artikkeli) => {
+      return `@article{${artikkeli.key},
+    author = {${artikkeli.author}},
+    title = {${artikkeli.title}},
+    journal = {${artikkeli.journal}},
+    year = {${artikkeli.year}},
+    volume = {${artikkeli.volume}},
+    pages = {${artikkeli.pages}}
+  }`;
+    };
+
   return (
     <>
         <h1>Lisää artikkeli</h1>
@@ -118,18 +129,22 @@ function App() {
           handlePagesChange={handlePagesChange}
         />
         <h2>Lähteet</h2>
-        {artikkelit.map((artikkeli, indeksi) => ( //tänne jotkut tarkistukset ettei tuu tyhjiä esim sivunmr?
-          <div key={indeksi} className="artikkelituloste">
-            <p> [{indeksi+1}] </p>
-            <p> {artikkeli.key}. </p>
-            <p> {artikkeli.author}. </p>
-            <p className="artikkelititle"> {artikkeli.title}. </p>
-            <p className="artikkelijournal"> {artikkeli.journal}. </p>
-            <p> {artikkeli.year}. </p>
-            <p> {artikkeli.volume}. </p>
-            <p> {artikkeli.pages}. </p>
-          </div>
-        ))}
+      {artikkelit.map((artikkeli, indeksi) => (
+        <div key={indeksi} className="artikkelituloste">
+          <p>[{indeksi + 1}]</p>
+          <p> {artikkeli.key}. {artikkeli.author}. ({artikkeli.year}). </p>
+          <p className="artikkelititle"> {artikkeli.title}. </p>
+          <p className="artikkelijournal"> {artikkeli.journal}, </p>
+          <p>{artikkeli.volume}, {artikkeli.pages}. </p>
+          
+        </div>
+      ))}
+      <h2>Lähteet BibTeX-muodossa</h2>
+      {artikkelit.map((artikkeli, indeksi) => (
+        <div key={indeksi} className="artikkelituloste">
+          <p><pre>{generateBibTeX(artikkeli)}</pre></p>
+        </div>
+      ))}
 
     </>
   )

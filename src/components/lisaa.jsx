@@ -6,6 +6,8 @@ const Lisaa = ({lisaaArtikkeli, newKey, handleKeyChange,
                 newVolume, handleVolumeChange,
                 newPages, handlePagesChange
 }) => {
+
+           
     return(
     <form onSubmit={lisaaArtikkeli}> 
         <div>
@@ -30,7 +32,12 @@ const Lisaa = ({lisaaArtikkeli, newKey, handleKeyChange,
         <div>
           <button type="submit">lisää</button>
        </div>
+       <div>
+       
+               
+            </div>
     </form>
+        
     )
 }
 
