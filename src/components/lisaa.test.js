@@ -9,22 +9,41 @@ import Lisaa from './lisaa'
     const user = userEvent.setup()
     const lisaaArtikkeli = jest.fn()
 
-    render(<Lisaa lisaaArtikkeli={lisaaArtikkeli} />)  
+    const { container } = render(<Lisaa createArtikkeli={lisaaArtikkeli} />)  
 
-    const inputs = screen.getAllByRole('textbox')
-    const sendButton = screen.getByText('lisää')
-
-    await user.type(inputs[0], 'test key')
-    await user.type(inputs[1], 'test author')
-    await user.type(inputs[2], 'test title')
-    await user.type(inputs[3], 'test journal')
-    await user.type(inputs[4], 'test year')
-    await user.type(inputs[5], 'test volume')
-    await user.type(inputs[6], 'test pages')
+    const keyInput = container.querySelector('#key-input')
+    const authorInput = container.querySelector('#author')
+    const titleInput = container.querySelector('#title')
+    const journalInput = container.querySelector('#journal')
+    const yearInput = container.querySelector('#year')
+    const volumeInput = container.querySelector('#volume')
+    const pagesInput = container.querySelector('#pages')
+    const sendButton = container.querySelector('#lisaa-button')
+  
+    // Täytetään lomake
+    await user.type(keyInput, 'test key')
+    await user.type(authorInput, 'test author')
+    await user.type(titleInput, 'test title')
+    await user.type(journalInput, 'test journal')
+    await user.type(yearInput, '2023')
+    await user.type(volumeInput, 'test volume')
+    await user.type(pagesInput, '22-45')
     await user.click(sendButton)
 
-    await expect(lisaaArtikkeli.mock.calls).toHaveLength(1)
-    await expect(lisaaArtikkeli).toHaveBeenCalled()
+    //testataan, että lisaaArtikkeli kutsutaan lomakkeen hyväksymisen jälkeen
+    expect(lisaaArtikkeli).toHaveBeenCalledTimes(1)
+    //testataan, että lisaaArtikkeli kutsutaan oikealla parametrilla
+    expect(lisaaArtikkeli).toHaveBeenCalledWith({
+      articleKey: 'test key',
+      author: 'test author',
+      title: 'test title',
+      journal: 'test journal',
+      year: '2023',
+      volume: 'test volume',
+      pages: '22-45',
+    })
+
+
 
   })
 
