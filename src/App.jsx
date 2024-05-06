@@ -28,7 +28,7 @@ function App() {
     bibtexContent += generateBibTeX(artikkeli) + ('\n\n')
   })
 
-  //TODO: kansion luonti tänne, sisältö siihen
+  //Tallennetaan lähteet tiedostona koneelle
   function downloadBibTeXFile() {
     console.log("ladataan joskus:")
     console.log(bibtexContent)
