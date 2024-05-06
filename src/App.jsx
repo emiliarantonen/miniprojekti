@@ -6,31 +6,38 @@ function App() {
   const [artikkelit, setArtikkelit] = useState([])
 
   const lisaaArtikkeli = async (artikkeliObject) => {
-
-    console.log(artikkeliObject)
-    
     await setArtikkelit(artikkelit.concat(artikkeliObject))
-    console.log(artikkelit)
   }
 
     // Funktio BibTeX-muotoisen merkkijonon rakentamiseksi
     const generateBibTeX = (artikkeli) => {
       return `@article{${artikkeli.articleKey},
-    author = {${artikkeli.author}},
-    title = {${artikkeli.title}},
-    journal = {${artikkeli.journal}},
-    year = {${artikkeli.year}},
-    volume = {${artikkeli.volume}},
-    pages = {${artikkeli.pages}}
-  }`;
-    };
+              author = {${artikkeli.author}},
+              title = {${artikkeli.title}},
+              journal = {${artikkeli.journal}},
+              year = {${artikkeli.year}},
+              volume = {${artikkeli.volume}},
+              pages = {${artikkeli.pages}}
+            }`;
+  };
 
+  //Luodaan sisältö valmiiksi tallennettavaa bibtex-tiedostoa varten
+  let bibtexContent = ''
+  artikkelit.forEach(artikkeli => {
+    bibtexContent += generateBibTeX(artikkeli) + ('\n\n')
+  })
+
+  //TODO: kansion luonti tänne, sisältö siihen
+  function downloadBibTeXFile() {
+    console.log("ladataan joskus:")
+    console.log(bibtexContent)
+  }
+  
   return (
     <>
         <h1>Lisää artikkeli</h1>
         <Lisaa createArtikkeli={lisaaArtikkeli} />
         <h2>Lähteet</h2>
-        {console.log(artikkelit)}
       {artikkelit.map((artikkeli, indeksi) => (
         <div key={indeksi} className="artikkelituloste">
           <p>[{indeksi + 1}]</p>
@@ -41,6 +48,7 @@ function App() {
           
         </div>
       ))}
+      <button onClick={downloadBibTeXFile}>Lataa BibTeX-tiedosto</button>
       <h2>Lähteet BibTeX-muodossa</h2>
       {artikkelit.map((artikkeli, indeksi) => (
         <div key={indeksi} className="artikkelituloste">
@@ -51,5 +59,6 @@ function App() {
     </>
   )
 }
+
 
 export default App
