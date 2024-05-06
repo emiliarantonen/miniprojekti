@@ -1,13 +1,30 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 import Lisaa from './components/lisaa'
-import { saveAs } from 'file-saver'; 
+import { saveAs } from 'file-saver'
 import './App.css'
 
 function App() {
   const [artikkelit, setArtikkelit] = useState([])
 
-  const lisaaArtikkeli = async (artikkeliObject) => {
-    await setArtikkelit(artikkelit.concat(artikkeliObject))
+  useEffect(() => {
+    console.log('effect')
+    axios
+      .get('http://localhost:3001/artikkelit')
+      .then(response => {
+        console.log('promise fulfilled')
+        setArtikkelit(response.data)
+      })
+  }, [])
+  console.log('render', artikkelit.length, 'artikkelit')
+
+  const lisaaArtikkeli = (artikkeliObject) => {
+
+    axios
+    .post('http://localhost:3001/artikkelit', artikkeliObject)
+    .then(response => {
+      setArtikkelit(artikkelit.concat(artikkeliObject))
+    })
   }
 
     // Funktio BibTeX-muotoisen merkkijonon rakentamiseksi

@@ -47,7 +47,7 @@ const Lisaa = ({ createArtikkeli }) => {
       year: newYear,
       volume: newVolume,
       pages: newPages,
-    };
+    }
 
     setNewArtikkeli(newArtikkeli)
 
