@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import Lisaa from './components/lisaa'
 import './App.css'
 
@@ -36,9 +34,9 @@ function App() {
       {artikkelit.map((artikkeli, indeksi) => (
         <div key={indeksi} className="artikkelituloste">
           <p>[{indeksi + 1}]</p>
-          <p> {artikkeli.articleKey}. {artikkeli.author}. ({artikkeli.year}). </p>
-          <p className="artikkelititle"> {artikkeli.title}. </p>
-          <p className="artikkelijournal"> {artikkeli.journal}, </p>
+          <p>{artikkeli.articleKey}. {artikkeli.author}. ({artikkeli.year}).</p>
+          <p className="artikkelititle">{artikkeli.title}.</p>
+          <p className="artikkelijournal">{artikkeli.journal},</p>
           <p>{artikkeli.volume}, {artikkeli.pages}. </p>
           
         </div>
