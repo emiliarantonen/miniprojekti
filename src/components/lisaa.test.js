@@ -4,8 +4,7 @@ import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import Lisaa from './lisaa'
 
-
-  test('Lisaa updates parent state and calls onSubmit', async () => {
+test('Lisaa updates parent state and calls onSubmit', async () => {
     const user = userEvent.setup()
     const lisaaArtikkeli = jest.fn()
 
@@ -42,8 +41,5 @@ import Lisaa from './lisaa'
       volume: 'test volume',
       pages: '22-45',
     })
-
-
-
-  })
+})
 

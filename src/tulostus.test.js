@@ -18,7 +18,6 @@ test('Adding an article prints it to the site', async () => {
     const pagesInput = container.querySelector('#pages')
     const sendButton = container.querySelector('#lisaa-button')
   
-    // Täytetään lomake
     await user.type(keyInput, 'test key')
     await user.type(authorInput, 'test author')
     await user.type(titleInput, 'test title')
