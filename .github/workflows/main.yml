@@ -18,5 +18,7 @@ jobs:
           node-version: '20.x'
       - name: Install dependencies
         run: npm install
+      - name: Start JSON Server
+        run: npm run server
       - name: Run tests
         run: npm test
