@@ -9,6 +9,176 @@
       "year": "2024",
       "volume": "22",
       "pages": "22-45"
+    },
+    {
+      "id": "5206",
+      "articleKey": "123",
+      "author": "123",
+      "title": "123",
+      "journal": "123",
+      "year": "1233",
+      "volume": "1233",
+      "pages": "123"
+    },
+    {
+      "id": "a9be",
+      "articleKey": "234",
+      "author": "123",
+      "title": "123",
+      "journal": "123",
+      "year": "1233",
+      "volume": "123",
+      "pages": "1233"
+    },
+    {
+      "id": "8580",
+      "articleKey": "test key",
+      "author": "test author",
+      "title": "test title",
+      "journal": "test journal",
+      "year": "2023",
+      "volume": "test volume",
+      "pages": "22-45"
+    },
+    {
+      "id": "5665",
+      "articleKey": "test key0",
+      "author": "test author0",
+      "title": "test title0",
+      "journal": "test journal0",
+      "year": "2023",
+      "volume": "test volume0",
+      "pages": "22-45"
+    },
+    {
+      "id": "1e78",
+      "articleKey": "test key1",
+      "author": "test author1",
+      "title": "test title1",
+      "journal": "test journal1",
+      "year": "2023",
+      "volume": "test volume1",
+      "pages": "22-45"
+    },
+    {
+      "id": "074e",
+      "articleKey": "test key2",
+      "author": "test author2",
+      "title": "test title2",
+      "journal": "test journal2",
+      "year": "2023",
+      "volume": "test volume2",
+      "pages": "22-45"
+    },
+    {
+      "id": "53b3",
+      "articleKey": "test key",
+      "author": "test author",
+      "title": "test title",
+      "journal": "test journal",
+      "year": "2023",
+      "volume": "test volume",
+      "pages": "22-45"
+    },
+    {
+      "id": "9cb5",
+      "articleKey": "test key0",
+      "author": "test author0",
+      "title": "test title0",
+      "journal": "test journal0",
+      "year": "2023",
+      "volume": "test volume0",
+      "pages": "22-45"
+    },
+    {
+      "id": "dafc",
+      "articleKey": "test key1",
+      "author": "test author1",
+      "title": "test title1",
+      "journal": "test journal1",
+      "year": "2023",
+      "volume": "test volume1",
+      "pages": "22-45"
+    },
+    {
+      "id": "9812",
+      "articleKey": "test key2",
+      "author": "test author2",
+      "title": "test title2",
+      "journal": "test journal2",
+      "year": "2023",
+      "volume": "test volume2",
+      "pages": "22-45"
+    },
+    {
+      "id": "c14f",
+      "articleKey": "test key",
+      "author": "test author",
+      "title": "test title",
+      "journal": "test journal",
+      "year": "2023",
+      "volume": "test volume",
+      "pages": "22-45"
+    },
+    {
+      "id": "9201",
+      "articleKey": "test key0",
+      "author": "test author0",
+      "title": "test title0",
+      "journal": "test journal0",
+      "year": "2023",
+      "volume": "test volume0",
+      "pages": "22-45"
+    },
+    {
+      "id": "9ac8",
+      "articleKey": "test key1",
+      "author": "test author1",
+      "title": "test title1",
+      "journal": "test journal1",
+      "year": "2023",
+      "volume": "test volume1",
+      "pages": "22-45"
+    },
+    {
+      "id": "45e5",
+      "articleKey": "test key2",
+      "author": "test author2",
+      "title": "test title2",
+      "journal": "test journal2",
+      "year": "2023",
+      "volume": "test volume2",
+      "pages": "22-45"
+    },
+    {
+      "id": "b62a",
+      "articleKey": "test key",
+      "author": "test author",
+      "title": "test title",
+      "journal": "test journal",
+      "year": "2023",
+      "volume": "test volume",
+      "pages": "22-45"
+    },
+    {
+      "id": "c97d",
+      "articleKey": "test key1",
+      "author": "test author1",
+      "title": "test title1",
+      "journal": "test journal1",
+      "year": "2023",
+      "volume": "test volume1",
+      "pages": "22-45"
+    },
+    {
+      "id": "071f",
+      "articleKey": "test key2",
+      "author": "test author2",
+      "title": "test title2",
+      "journal": "test journal2",
+      "year": "2023",
+      "volume": "test volume2",
+      "pages": "22-45"
     }
   ]
 }
