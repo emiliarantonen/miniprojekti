@@ -11,6 +11,7 @@
       "pages": "22-45"
     },
     {
+<<<<<<< HEAD
       "id": "5206",
       "articleKey": "123",
       "author": "123",
@@ -32,6 +33,9 @@
     },
     {
       "id": "8580",
+=======
+      "id": "3e81",
+>>>>>>> fba55a8234dc0b2d292c3b1f41d954b16a5d4148
       "articleKey": "test key",
       "author": "test author",
       "title": "test title",
@@ -41,7 +45,11 @@
       "pages": "22-45"
     },
     {
+<<<<<<< HEAD
       "id": "5665",
+=======
+      "id": "28e5",
+>>>>>>> fba55a8234dc0b2d292c3b1f41d954b16a5d4148
       "articleKey": "test key0",
       "author": "test author0",
       "title": "test title0",
@@ -51,7 +59,11 @@
       "pages": "22-45"
     },
     {
+<<<<<<< HEAD
       "id": "1e78",
+=======
+      "id": "75e3",
+>>>>>>> fba55a8234dc0b2d292c3b1f41d954b16a5d4148
       "articleKey": "test key1",
       "author": "test author1",
       "title": "test title1",
@@ -61,7 +73,11 @@
       "pages": "22-45"
     },
     {
+<<<<<<< HEAD
       "id": "074e",
+=======
+      "id": "46f9",
+>>>>>>> fba55a8234dc0b2d292c3b1f41d954b16a5d4148
       "articleKey": "test key2",
       "author": "test author2",
       "title": "test title2",
@@ -71,7 +87,11 @@
       "pages": "22-45"
     },
     {
+<<<<<<< HEAD
       "id": "53b3",
+=======
+      "id": "dd52",
+>>>>>>> fba55a8234dc0b2d292c3b1f41d954b16a5d4148
       "articleKey": "test key",
       "author": "test author",
       "title": "test title",
@@ -81,7 +101,11 @@
       "pages": "22-45"
     },
     {
+<<<<<<< HEAD
       "id": "9cb5",
+=======
+      "id": "106b",
+>>>>>>> fba55a8234dc0b2d292c3b1f41d954b16a5d4148
       "articleKey": "test key0",
       "author": "test author0",
       "title": "test title0",
@@ -91,7 +115,11 @@
       "pages": "22-45"
     },
     {
+<<<<<<< HEAD
       "id": "dafc",
+=======
+      "id": "255c",
+>>>>>>> fba55a8234dc0b2d292c3b1f41d954b16a5d4148
       "articleKey": "test key1",
       "author": "test author1",
       "title": "test title1",
@@ -101,7 +129,11 @@
       "pages": "22-45"
     },
     {
+<<<<<<< HEAD
       "id": "9812",
+=======
+      "id": "b415",
+>>>>>>> fba55a8234dc0b2d292c3b1f41d954b16a5d4148
       "articleKey": "test key2",
       "author": "test author2",
       "title": "test title2",
@@ -111,7 +143,11 @@
       "pages": "22-45"
     },
     {
+<<<<<<< HEAD
       "id": "c14f",
+=======
+      "id": "4d7e",
+>>>>>>> fba55a8234dc0b2d292c3b1f41d954b16a5d4148
       "articleKey": "test key",
       "author": "test author",
       "title": "test title",
@@ -121,7 +157,11 @@
       "pages": "22-45"
     },
     {
+<<<<<<< HEAD
       "id": "9201",
+=======
+      "id": "d370",
+>>>>>>> fba55a8234dc0b2d292c3b1f41d954b16a5d4148
       "articleKey": "test key0",
       "author": "test author0",
       "title": "test title0",
@@ -131,7 +171,11 @@
       "pages": "22-45"
     },
     {
+<<<<<<< HEAD
       "id": "9ac8",
+=======
+      "id": "12d6",
+>>>>>>> fba55a8234dc0b2d292c3b1f41d954b16a5d4148
       "articleKey": "test key1",
       "author": "test author1",
       "title": "test title1",
@@ -141,6 +185,7 @@
       "pages": "22-45"
     },
     {
+<<<<<<< HEAD
       "id": "45e5",
       "articleKey": "test key2",
       "author": "test author2",
@@ -172,6 +217,9 @@
     },
     {
       "id": "071f",
+=======
+      "id": "8593",
+>>>>>>> fba55a8234dc0b2d292c3b1f41d954b16a5d4148
       "articleKey": "test key2",
       "author": "test author2",
       "title": "test title2",
