@@ -20,7 +20,7 @@ test('Lisaa updates parent state and calls onSubmit', async () => {
     const sendButton = container.querySelector('#lisaa-button')
   
     // Täytetään lomake
-    await user.type(keyInput, 'test key')
+    await user.type(keyInput, 'testkey')
     await user.type(authorInput, 'test author')
     await user.type(titleInput, 'test title')
     await user.type(journalInput, 'test journal')
@@ -33,7 +33,7 @@ test('Lisaa updates parent state and calls onSubmit', async () => {
     expect(lisaaArtikkeli).toHaveBeenCalledTimes(1)
     //testataan, että lisaaArtikkeli kutsutaan oikealla parametrilla
     expect(lisaaArtikkeli).toHaveBeenCalledWith({
-      articleKey: 'test key',
+      articleKey: 'testkey',
       author: 'test author',
       title: 'test title',
       journal: 'test journal',
@@ -41,5 +41,27 @@ test('Lisaa updates parent state and calls onSubmit', async () => {
       volume: 'test volume',
       pages: '22-45',
     })
+})
+
+
+test('Lisaa displays alert when not all fields are filled', async () => {
+  const lisaaArtikkeli = jest.fn()
+
+  const alertSpy = jest.spyOn(window, 'alert').mockImplementation(() => {})
+
+  render(<Lisaa createArtikkeli={lisaaArtikkeli} />)
+
+  const sendButton = screen.getByText('lisää')
+
+  await userEvent.click(sendButton)
+
+  //tarkistaa, ettei lisää artikkelia kutsuta jos kaikki kentät ei ole täytetty
+  expect(lisaaArtikkeli).toHaveBeenCalledTimes(0)
+
+  // Tarkista, että `window.alert`-funktiota kutsutaan halutulla viestillä
+  expect(alertSpy).toHaveBeenCalledWith('Kaikkien kenttien täyttäminen on pakollista')
+
+  alertSpy.mockRestore()
+
 })
 
