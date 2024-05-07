@@ -6,6 +6,7 @@ import './App.css'
 
 function App() {
   const [artikkelit, setArtikkelit] = useState([])
+  const [message, setMessage] = useState('');
 
   useEffect(() => {
     console.log('effect')
@@ -52,11 +53,32 @@ function App() {
     saveAs(blob, fileName);
   }
   
+  //Tarvittaessa tietokannan tyhennystä varten 
+
+  const clearDatabase = async () => {
+    try {
+      const response = await axios.get('http://localhost:3001/artikkelit');
+      const articles = response.data;
+      // Käydään läpi jokainen id ja lähetetään DELETE-pyyntö
+      for (const article of articles) {
+        await axios.delete(`http://localhost:3001/artikkelit/${article.id}`);
+        console.log(`Artikkeli ID: ${article.id} poistettu`);
+      }
+      // Päivitä näkymä
+      window.location.reload();
+    } catch (error) {
+      console.error('Virhe:', error);
+    }
+  };
+
   return (
     <>
         <h1>Lisää artikkeli</h1>
         <Lisaa createArtikkeli={lisaaArtikkeli} />
         <h2>Lähteet</h2>
+        {/* tietokannan tyhennys */}
+        <button onClick={clearDatabase}>Tyhjennä tietokanta</button>
+        <p>{message}</p>
       {artikkelit.map((artikkeli, indeksi) => (
         <div key={indeksi} data-testid={artikkeli.articleKey} className="artikkelituloste">
           <p>[{indeksi + 1}]</p>
@@ -74,7 +96,6 @@ function App() {
           <p><pre>{generateBibTeX(artikkeli)}</pre></p>
         </div>
       ))}
-
     </>
   )
 }
