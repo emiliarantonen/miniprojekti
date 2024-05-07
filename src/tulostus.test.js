@@ -50,7 +50,7 @@ test('Adding an article prints it to the site', async () => {
 
         const kolmas = screen.getByText(`test volume, 22-45.`)
         expect(kolmas).toBeInTheDocument()
-    });
+    })
 })
 
 //Testataan useamman artikkelin tulostamisen toimivuutta.

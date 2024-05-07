@@ -2,6 +2,7 @@ import React from 'react'
 import { render, fireEvent, waitFor } from '@testing-library/react'
 import App from './App'
 import { saveAs } from 'file-saver'
+import userEvent from '@testing-library/user-event'
 
 //Mock saveAs
 jest.mock('file-saver', () => ({
