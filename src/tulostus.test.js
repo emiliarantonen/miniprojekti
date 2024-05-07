@@ -4,7 +4,9 @@ import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
 import App from './App'
 
-//Ei haluta muutoksia databaseen
+//Ei haeta eikä tallenneta databaseen. Näin ei tarvi
+//välittää, jos databasesta löytyisi duplikaatteja
+//tai että testialkiot sotkisivat sen.
 jest.mock('axios', () => ({
     get: jest.fn(() => Promise.resolve({ data: [] })),
     post: jest.fn(() => Promise.resolve({ data: {} })),
