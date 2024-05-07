@@ -48,6 +48,9 @@ function App() {
 
   //Tallennetaan lähteet tiedostona koneelle
   function downloadBibTeXFile() {
+    console.log("ladataan joskus:")
+    console.log(bibtexContent)
+
     const blob = new Blob([bibtexContent], { type: 'text/plain;charset=utf-8' });
     const fileName = 'bibText.bib'
     saveAs(blob, fileName);
@@ -80,7 +83,7 @@ function App() {
         <button onClick={clearDatabase}>Tyhjennä tietokanta</button>
         <p>{message}</p>
       {artikkelit.map((artikkeli, indeksi) => (
-        <div key={indeksi} data-testid={artikkeli.articleKey} className="artikkelituloste">
+        <div key={indeksi} className="artikkelituloste">
           <p>[{indeksi + 1}]</p>
           <p>{artikkeli.articleKey}. {artikkeli.author}. ({artikkeli.year}).</p>
           <p className="artikkelititle">{artikkeli.title}.</p>

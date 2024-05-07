@@ -30,6 +30,7 @@ const Lisaa = ({ createArtikkeli }) => {
       return;
     }
 
+    //Tarkastetaan, että articlekey ei sisällä pilkkuja tai välilyöntejä.
     if (newKey.includes(',') || newKey.includes(' ')) {
       alert('Article key ei saa sisältää välilyöntejä tai pilkkuja')
       return
@@ -44,6 +45,7 @@ const Lisaa = ({ createArtikkeli }) => {
       alert('Vuosiluvun tulee olla nelinumeroinen ja maksimissaan tämämän hetkinen vuosiluku.')
       return;
     }
+    
     const newArtikkeli = {
       articleKey: newKey,
       author: newAuthor,
@@ -120,10 +122,6 @@ const Lisaa = ({ createArtikkeli }) => {
         <div>
           <button type="submit" id='lisaa-button'>lisää</button>
        </div>
-       <div>
-       
-               
-            </div>
     </form>
         
     )

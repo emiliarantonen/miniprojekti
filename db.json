@@ -1,3 +1,14 @@
 {
-  "artikkelit": []
+  "artikkelit": [
+    {
+      "id": "4572",
+      "articleKey": "123",
+      "author": "123",
+      "title": "123",
+      "journal": "123",
+      "year": "1233",
+      "volume": "123",
+      "pages": "123"
+    }
+  ]
 }

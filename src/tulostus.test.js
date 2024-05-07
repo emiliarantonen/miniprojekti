@@ -4,11 +4,18 @@ import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
 import App from './App'
 
+//Ei haluta muutoksia databaseen
+jest.mock('axios', () => ({
+    get: jest.fn(() => Promise.resolve({ data: [] })),
+    post: jest.fn(() => Promise.resolve({ data: {} })),
+}))
 
+//Testataan yksittäisen artikkelin tulostamisen toimivuutta
 test('Adding an article prints it to the site', async () => {
     const user = userEvent.setup()
     const { container } = render(<App />)
 
+    //Input elementit talteen
     const keyInput = container.querySelector('#key-input')
     const authorInput = container.querySelector('#author')
     const titleInput = container.querySelector('#title')
@@ -17,7 +24,8 @@ test('Adding an article prints it to the site', async () => {
     const volumeInput = container.querySelector('#volume')
     const pagesInput = container.querySelector('#pages')
     const sendButton = container.querySelector('#lisaa-button')
-  
+    
+    //Syötetään testidata inputteihin
     await user.type(keyInput, 'testkey')
     await user.type(authorInput, 'test author')
     await user.type(titleInput, 'test title')
@@ -27,10 +35,11 @@ test('Adding an article prints it to the site', async () => {
     await user.type(pagesInput, '22-45')
     await user.click(sendButton)
 
+    /** Täytyy olla await waitFor, jotta syötetty data kerkee päivittyä
+        html-rakenteeseen.Tarkastetaan, että syötetty data löytyy näytöltä 
+        tulostettuna */
     await waitFor(() => {
-        const testdiv = screen.getByTestId('testkey');
-        expect(testdiv).toBeInTheDocument();
-
+        //muotoilun takia <p>key. author. (vuosi.) testataan vastaavasti
         const eka = screen.getByText(`testkey. test author. (2023).`)
         expect(eka).toBeInTheDocument()
 
@@ -42,7 +51,8 @@ test('Adding an article prints it to the site', async () => {
     });
 })
 
-
+//Testataan useamman artikkelin tulostamisen toimivuutta.
+//Sama toimintatapa kuin ylempänä, mutta useammalle.
 test('Adding multiple articles prints them to the site', async () => {
     const user = userEvent.setup()
     const { container } = render(<App />)
@@ -69,9 +79,6 @@ test('Adding multiple articles prints them to the site', async () => {
 
     await waitFor(() => {
         for (let i = 0; i < 2; i++) {
-            const testdiv = screen.getByTestId(`testkey${i}`);
-            expect(testdiv).toBeInTheDocument();
-
             const eka = screen.getByText(`testkey${i}. test author${i}. (2023).`)
             expect(eka).toBeInTheDocument()
             const toka = screen.getByText(`test title${i}.`)

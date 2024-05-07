@@ -20,7 +20,7 @@ test('Lisaa updates parent state and calls onSubmit', async () => {
     const sendButton = container.querySelector('#lisaa-button')
   
     // Täytetään lomake
-    await user.type(keyInput, 'test key')
+    await user.type(keyInput, 'testkey')
     await user.type(authorInput, 'test author')
     await user.type(titleInput, 'test title')
     await user.type(journalInput, 'test journal')
@@ -33,7 +33,7 @@ test('Lisaa updates parent state and calls onSubmit', async () => {
     expect(lisaaArtikkeli).toHaveBeenCalledTimes(1)
     //testataan, että lisaaArtikkeli kutsutaan oikealla parametrilla
     expect(lisaaArtikkeli).toHaveBeenCalledWith({
-      articleKey: 'test key',
+      articleKey: 'testkey',
       author: 'test author',
       title: 'test title',
       journal: 'test journal',
