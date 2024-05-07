@@ -30,6 +30,11 @@ const Lisaa = ({ createArtikkeli }) => {
       return;
     }
 
+    if (newKey.includes(',') || newKey.includes(' ')) {
+      alert('Article key ei saa sisältää välilyöntejä tai pilkkuja')
+      return
+    }
+
     if (!validatePages(newPages)) {
       alert('Anna kelvollinen luku sivuille!')
       return;
