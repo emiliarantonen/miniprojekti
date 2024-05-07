@@ -43,3 +43,25 @@ test('Lisaa updates parent state and calls onSubmit', async () => {
     })
 })
 
+
+test('Lisaa displays alert when not all fields are filled', async () => {
+  const lisaaArtikkeli = jest.fn()
+
+  const alertSpy = jest.spyOn(window, 'alert').mockImplementation(() => {})
+
+  render(<Lisaa createArtikkeli={lisaaArtikkeli} />)
+
+  const sendButton = screen.getByText('lisää')
+
+  await userEvent.click(sendButton)
+
+  //tarkistaa, ettei lisää artikkelia kutsuta jos kaikki kentät ei ole täytetty
+  expect(lisaaArtikkeli).toHaveBeenCalledTimes(0)
+
+  // Tarkista, että `window.alert`-funktiota kutsutaan halutulla viestillä
+  expect(alertSpy).toHaveBeenCalledWith('Kaikkien kenttien täyttäminen on pakollista')
+
+  alertSpy.mockRestore()
+
+})
+
