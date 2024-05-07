@@ -47,9 +47,6 @@ function App() {
 
   //Tallennetaan lähteet tiedostona koneelle
   function downloadBibTeXFile() {
-    console.log("ladataan joskus:")
-    console.log(bibtexContent)
-
     const blob = new Blob([bibtexContent], { type: 'text/plain;charset=utf-8' });
     const fileName = 'bibText.bib'
     saveAs(blob, fileName);
