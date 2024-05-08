@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on darwin)" generated="2024-05-08T13:48:14.875757" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="/Users/laura/kurssit/ohjelmistotuotanto/uusimini/miniprojekti/src/tests">
+<suite id="s1-s1" name="Lisays" source="/Users/laura/kurssit/ohjelmistotuotanto/uusimini/miniprojekti/src/tests/lisays.robot">
+<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
+<msg time="2024-05-08T13:48:15.133458" level="INFO">Opening browser 'firefox' to base url 'http://localhost:5173'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>firefox</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-05-08T13:48:15.133200" elapsed="3.873199"/>
+</kw>
+<test id="s1-s1-t1" name="Verify Form Submission" line="17">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:19.008697" level="INFO">Opening url 'http://localhost:5173'</msg>
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-05-08T13:48:19.008278" elapsed="0.144688"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:19.154172" level="INFO">Clicking button 'xpath=//button[contains(text(), 'Tyhjennä tietokanta')]'.</msg>
+<arg>xpath=//button[contains(text(), 'Tyhjennä tietokanta')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T13:48:19.153374" elapsed="0.347104"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-05-08T13:48:21.502176" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-05-08T13:48:19.500876" elapsed="2.001548"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:21.503709" level="INFO">Typing text 'testkey' into text field 'id=key-input'.</msg>
+<arg>id=key-input</arg>
+<arg>${NEW_ARTICLE_KEY}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T13:48:21.503015" elapsed="0.086075"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:21.590765" level="INFO">Typing text 'test author' into text field 'id=author'.</msg>
+<arg>id=author</arg>
+<arg>${NEW_ARTICLE_AUTHOR}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T13:48:21.589739" elapsed="0.053905"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:21.645082" level="INFO">Typing text 'test title' into text field 'id=title'.</msg>
+<arg>id=title</arg>
+<arg>${NEW_ARTICLE_TITLE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T13:48:21.644344" elapsed="0.039672"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:21.684707" level="INFO">Typing text 'test journal' into text field 'id=journal'.</msg>
+<arg>id=journal</arg>
+<arg>${NEW_ARTICLE_JOURNAL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T13:48:21.684348" elapsed="0.044204"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:21.729340" level="INFO">Typing text '2023' into text field 'id=year'.</msg>
+<arg>id=year</arg>
+<arg>${NEW_ARTICLE_YEAR}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T13:48:21.728943" elapsed="0.025283"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:21.755181" level="INFO">Typing text 'test volume' into text field 'id=volume'.</msg>
+<arg>id=volume</arg>
+<arg>${NEW_ARTICLE_VOLUME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T13:48:21.754671" elapsed="0.033514"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:21.789239" level="INFO">Typing text '22-45' into text field 'id=pages'.</msg>
+<arg>id=pages</arg>
+<arg>${NEW_ARTICLE_PAGES}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T13:48:21.788792" elapsed="0.022461"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:21.811814" level="INFO">Clicking button 'id=lisaa-button'.</msg>
+<arg>id=lisaa-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T13:48:21.811560" elapsed="0.234979"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${NEW_ARTICLE_KEY}. ${NEW_ARTICLE_AUTHOR}. (${NEW_ARTICLE_YEAR}).</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T13:48:22.046962" elapsed="0.004587"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${NEW_ARTICLE_TITLE}.</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T13:48:22.051907" elapsed="0.003154"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${NEW_ARTICLE_VOLUME}, ${NEW_ARTICLE_PAGES}.</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T13:48:22.055358" elapsed="0.003104"/>
+</kw>
+<doc>Test if form submission calls the parent function with correct parameters.</doc>
+<status status="PASS" start="2024-05-08T13:48:19.007133" elapsed="3.051601"/>
+</test>
+<test id="s1-s1-t2" name="Check Missing Fields Alert" line="40">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:22.059804" level="INFO">Opening url 'http://localhost:5173'</msg>
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-05-08T13:48:22.059607" elapsed="0.087548"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:22.147801" level="INFO">Clicking button 'xpath=//button[contains(text(), 'Tyhjennä tietokanta')]'.</msg>
+<arg>xpath=//button[contains(text(), 'Tyhjennä tietokanta')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T13:48:22.147467" elapsed="0.086570"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-05-08T13:48:24.234953" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-05-08T13:48:22.234293" elapsed="2.000908"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:24.241880" level="INFO">${initial_articles} = []</msg>
+<var>${initial_articles}</var>
+<arg>xpath=//div[contains(@class, 'artikkelituloste')]</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-05-08T13:48:24.235823" elapsed="0.006141"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2024-05-08T13:48:24.242757" level="INFO">Length is 0.</msg>
+<msg time="2024-05-08T13:48:24.242948" level="INFO">${initial_count} = 0</msg>
+<var>${initial_count}</var>
+<arg>${initial_articles}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2024-05-08T13:48:24.242416" elapsed="0.000590"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:24.243674" level="INFO">Clicking button 'id=lisaa-button'.</msg>
+<arg>id=lisaa-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T13:48:24.243333" elapsed="0.079239"/>
+</kw>
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:24.323037" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<arg>action=ACCEPT</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2024-05-08T13:48:24.322841" elapsed="0.024368"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:24.351376" level="INFO">${new_articles} = []</msg>
+<var>${new_articles}</var>
+<arg>xpath=//div[contains(@class, 'artikkelituloste')]</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-05-08T13:48:24.347551" elapsed="0.003881"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2024-05-08T13:48:24.352500" level="INFO">Length is 0.</msg>
+<msg time="2024-05-08T13:48:24.352608" level="INFO">${new_count} = 0</msg>
+<var>${new_count}</var>
+<arg>${new_articles}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2024-05-08T13:48:24.351962" elapsed="0.000677"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${new_count}</arg>
+<arg>${initial_count}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-05-08T13:48:24.352919" elapsed="0.000299"/>
+</kw>
+<doc>Test if an alert is displayed and no new article is added when required fields are missing.</doc>
+<status status="PASS" start="2024-05-08T13:48:22.059088" elapsed="2.294338"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-05-08T13:48:24.354185" elapsed="0.894012"/>
+</kw>
+<status status="PASS" start="2024-05-08T13:48:14.904973" elapsed="10.343348"/>
+</suite>
+<suite id="s1-s2" name="Tulostus" source="/Users/laura/kurssit/ohjelmistotuotanto/uusimini/miniprojekti/src/tests/tulostus.robot">
+<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
+<msg time="2024-05-08T13:48:25.253290" level="INFO">Opening browser 'firefox' to base url 'http://localhost:5173'.</msg>
+<arg>http://localhost:5173</arg>
+<arg>firefox</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-05-08T13:48:25.253056" elapsed="4.049501"/>
+</kw>
+<test id="s1-s2-t1" name="Verify Single Article Printing" line="17">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:29.304457" level="INFO">Opening url 'http://localhost:5173'</msg>
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-05-08T13:48:29.304083" elapsed="0.129338"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:29.434434" level="INFO">Typing text 'testkey' into text field 'id=key-input'.</msg>
+<arg>id=key-input</arg>
+<arg>${NEW_ARTICLE_KEY}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T13:48:29.433810" elapsed="0.096983"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:29.531516" level="INFO">Typing text 'test author' into text field 'id=author'.</msg>
+<arg>id=author</arg>
+<arg>${NEW_ARTICLE_AUTHOR}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T13:48:29.531103" elapsed="0.031626"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:29.563371" level="INFO">Typing text 'test title' into text field 'id=title'.</msg>
+<arg>id=title</arg>
+<arg>${NEW_ARTICLE_TITLE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T13:48:29.563039" elapsed="0.030611"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:29.594410" level="INFO">Typing text 'test journal' into text field 'id=journal'.</msg>
+<arg>id=journal</arg>
+<arg>${NEW_ARTICLE_JOURNAL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T13:48:29.593993" elapsed="0.029225"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:29.623992" level="INFO">Typing text '2023' into text field 'id=year'.</msg>
+<arg>id=year</arg>
+<arg>${NEW_ARTICLE_YEAR}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T13:48:29.623540" elapsed="0.020527"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:29.644925" level="INFO">Typing text 'test volume' into text field 'id=volume'.</msg>
+<arg>id=volume</arg>
+<arg>${NEW_ARTICLE_VOLUME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T13:48:29.644377" elapsed="0.027318"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:29.672540" level="INFO">Typing text '22-45' into text field 'id=pages'.</msg>
+<arg>id=pages</arg>
+<arg>${NEW_ARTICLE_PAGES}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T13:48:29.672023" elapsed="0.021039"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:29.693687" level="INFO">Clicking button 'id=lisaa-button'.</msg>
+<arg>id=lisaa-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T13:48:29.693373" elapsed="0.233796"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${NEW_ARTICLE_KEY}. ${NEW_ARTICLE_AUTHOR}. (${NEW_ARTICLE_YEAR}).</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T13:48:29.927564" elapsed="0.010729"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${NEW_ARTICLE_TITLE}.</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T13:48:29.938559" elapsed="0.016140"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${NEW_ARTICLE_VOLUME}, ${NEW_ARTICLE_PAGES}.</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T13:48:29.954960" elapsed="0.004842"/>
+</kw>
+<doc>Test if adding a single article prints it to the site.</doc>
+<status status="PASS" start="2024-05-08T13:48:29.303075" elapsed="0.657010"/>
+</test>
+<test id="s1-s2-t2" name="Verify Multiple Articles Printing" line="34">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:29.961334" level="INFO">Opening url 'http://localhost:5173'</msg>
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-05-08T13:48:29.961108" elapsed="0.113273"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:30.076071" level="INFO">Typing text 'testkey0' into text field 'id=key-input'.</msg>
+<arg>id=key-input</arg>
+<arg>testkey${i}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T13:48:30.075693" elapsed="0.042854"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:30.119219" level="INFO">Typing text 'test author0' into text field 'id=author'.</msg>
+<arg>id=author</arg>
+<arg>test author${i}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T13:48:30.118786" elapsed="0.037302"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:30.156843" level="INFO">Typing text 'test title0' into text field 'id=title'.</msg>
+<arg>id=title</arg>
+<arg>test title${i}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T13:48:30.156404" elapsed="0.057630"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:30.214798" level="INFO">Typing text 'test journal0' into text field 'id=journal'.</msg>
+<arg>id=journal</arg>
+<arg>test journal${i}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T13:48:30.214330" elapsed="0.078708"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:30.294111" level="INFO">Typing text '2023' into text field 'id=year'.</msg>
+<arg>id=year</arg>
+<arg>${NEW_ARTICLE_YEAR}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T13:48:30.293278" elapsed="0.030294"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:30.324198" level="INFO">Typing text 'test volume0' into text field 'id=volume'.</msg>
+<arg>id=volume</arg>
+<arg>test volume${i}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T13:48:30.323827" elapsed="0.058920"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:30.383305" level="INFO">Typing text '22-45' into text field 'id=pages'.</msg>
+<arg>id=pages</arg>
+<arg>${NEW_ARTICLE_PAGES}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T13:48:30.383000" elapsed="0.026246"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:30.409788" level="INFO">Clicking button 'id=lisaa-button'.</msg>
+<arg>id=lisaa-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T13:48:30.409513" elapsed="0.227084"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2024-05-08T13:48:30.075476" elapsed="0.561314"/>
+</iter>
+<iter>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:30.638166" level="INFO">Typing text 'testkey1' into text field 'id=key-input'.</msg>
+<arg>id=key-input</arg>
+<arg>testkey${i}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T13:48:30.637666" elapsed="0.023477"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:30.661609" level="INFO">Typing text 'test author1' into text field 'id=author'.</msg>
+<arg>id=author</arg>
+<arg>test author${i}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T13:48:30.661348" elapsed="0.024973"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:30.687108" level="INFO">Typing text 'test title1' into text field 'id=title'.</msg>
+<arg>id=title</arg>
+<arg>test title${i}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T13:48:30.686615" elapsed="0.025705"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:30.712873" level="INFO">Typing text 'test journal1' into text field 'id=journal'.</msg>
+<arg>id=journal</arg>
+<arg>test journal${i}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T13:48:30.712566" elapsed="0.026387"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:30.739698" level="INFO">Typing text '2023' into text field 'id=year'.</msg>
+<arg>id=year</arg>
+<arg>${NEW_ARTICLE_YEAR}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T13:48:30.739255" elapsed="0.015448"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:30.755366" level="INFO">Typing text 'test volume1' into text field 'id=volume'.</msg>
+<arg>id=volume</arg>
+<arg>test volume${i}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T13:48:30.754955" elapsed="0.024305"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:30.779724" level="INFO">Typing text '22-45' into text field 'id=pages'.</msg>
+<arg>id=pages</arg>
+<arg>${NEW_ARTICLE_PAGES}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T13:48:30.779454" elapsed="0.018248"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-08T13:48:30.798114" level="INFO">Clicking button 'id=lisaa-button'.</msg>
+<arg>id=lisaa-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T13:48:30.797901" elapsed="0.225338"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2024-05-08T13:48:30.637279" elapsed="0.386072"/>
+</iter>
+<var>${i}</var>
+<value>2</value>
+<status status="PASS" start="2024-05-08T13:48:30.074718" elapsed="0.948895"/>
+</for>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>testkey${i}. test author${i}. (${NEW_ARTICLE_YEAR}).</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T13:48:31.024416" elapsed="0.006266"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>test title${i}.</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T13:48:31.030885" elapsed="0.002702"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>test volume${i}, ${NEW_ARTICLE_PAGES}.</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T13:48:31.033768" elapsed="0.002621"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2024-05-08T13:48:31.024229" elapsed="0.012248"/>
+</iter>
+<iter>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>testkey${i}. test author${i}. (${NEW_ARTICLE_YEAR}).</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T13:48:31.036760" elapsed="0.002839"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>test title${i}.</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T13:48:31.039778" elapsed="0.002604"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>test volume${i}, ${NEW_ARTICLE_PAGES}.</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T13:48:31.042554" elapsed="0.002488"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2024-05-08T13:48:31.036640" elapsed="0.008479"/>
+</iter>
+<var>${i}</var>
+<value>2</value>
+<status status="PASS" start="2024-05-08T13:48:31.023844" elapsed="0.021333"/>
+</for>
+<doc>Test if adding multiple articles prints them to the site.</doc>
+<status status="PASS" start="2024-05-08T13:48:29.960478" elapsed="1.084895"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-05-08T13:48:31.045822" elapsed="0.822975"/>
+</kw>
+<status status="PASS" start="2024-05-08T13:48:25.249210" elapsed="6.619712"/>
+</suite>
+<status status="PASS" start="2024-05-08T13:48:14.877353" elapsed="16.993011"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="Lisays">Tests.Lisays</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s2" name="Tulostus">Tests.Tulostus</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
