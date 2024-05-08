@@ -16,7 +16,7 @@ Lisäksi palvelin auki komennolla 'npm run server'
 
 ## Testaus
 
-Testit ajetaan komennolla 'npm test'
+Testit ajetaan komennolla 'npm test'   
 Testauskattavuus raportti päivitetään komennolla 'npm test -- --coverage --collectCoverageFrom='src/**/*.{jsx,js}''
 
 ![GHA workflow badgee](https://github.com/emiliarantonen/miniprojekti/workflows/CI/badge.svg)
