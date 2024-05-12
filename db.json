@@ -1,34 +1,44 @@
 {
   "artikkelit": [
     {
-      "id": "d750",
-      "articleKey": "key1",
-      "author": "Poggiolesi, F",
-      "title": "On defining the notion of complette and immediate formal grounding",
-      "journal": "Synthese",
-      "year": "2016",
-      "volume": "193",
-      "pages": "3147-3167"
+      "id": "6e87",
+      "articleKey": "testkey",
+      "author": "test author",
+      "title": "test title",
+      "journal": "test journal",
+      "year": "2023",
+      "volume": "test volume",
+      "pages": "22-45"
     },
     {
-      "id": "e470",
-      "articleKey": "key2",
-      "author": "Happ-Kurz, C",
-      "title": "Object-oriented software for functional data",
-      "journal": "Journal of statistical software",
-      "year": "2020",
-      "volume": "93",
-      "pages": "5"
+      "id": "20b9",
+      "articleKey": "testkey",
+      "author": "test author",
+      "title": "test title",
+      "journal": "test journal",
+      "year": "2023",
+      "volume": "test volume",
+      "pages": "22-45"
     },
     {
-      "id": "e458",
-      "articleKey": "key3",
-      "author": "Hoeowitz, E",
-      "title": "George Elliot: The conservative",
-      "journal": "Victorian studies",
-      "year": "2006",
-      "volume": "49",
-      "pages": "1-32"
+      "id": "937e",
+      "articleKey": "testkey0",
+      "author": "test author0",
+      "title": "test title0",
+      "journal": "test journal0",
+      "year": "2023",
+      "volume": "test volume0",
+      "pages": "22-45"
+    },
+    {
+      "id": "6eff",
+      "articleKey": "testkey1",
+      "author": "test author1",
+      "title": "test title1",
+      "journal": "test journal1",
+      "year": "2023",
+      "volume": "test volume1",
+      "pages": "22-45"
     }
   ]
 }
