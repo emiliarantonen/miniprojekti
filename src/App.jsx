@@ -9,6 +9,7 @@ function App() {
   const [message, setMessage] = useState('');
   const [artikkeliAuki, setArtikkeliAuki] = useState(false);
   const [yhdistelmaArtikkeliAuki, setYhdistelmaArtikkeliAuki] = useState(false);
+  const [kirjaAuki, setKirjaAuki] = useState(false);
 
 
   useEffect(() => {
@@ -30,6 +31,7 @@ function App() {
       setArtikkelit(artikkelit.concat(artikkeliObject))
     })
   }
+
 
   // artikkelien järjestys kirjoittajan sukunimen perusteella
   const jarjastaArtikkelit = () => {
@@ -90,6 +92,8 @@ function App() {
     if(yhdistelmaArtikkeliAuki)
       setYhdistelmaArtikkeliAuki(false)
     console.log(yhdistelmaArtikkeliAuki)
+    if(kirjaAuki)
+      setKirjaAuki(false)
   };
 
   const toggleYhdistelmaArtikkeli = () => {
@@ -97,6 +101,17 @@ function App() {
     console.log(yhdistelmaArtikkeliAuki)
     if(artikkeliAuki)
       setArtikkeliAuki(false)
+    if(kirjaAuki)
+      setKirjaAuki(false)
+  };
+
+  const toggleKirja = () => {
+    setKirjaAuki(!kirjaAuki);
+    console.log(kirjaAuki)
+    if(artikkeliAuki)
+      setArtikkeliAuki(false)
+    if(yhdistelmaArtikkeliAuki)
+      setYhdistelmaArtikkeliAuki(false)
   };
 
   return (
@@ -104,7 +119,10 @@ function App() {
         <h1>Lisää lähteitä</h1>
         <button onClick={toggleArtikkeli}> Lisää artikkeli </button>
         <button onClick={toggleYhdistelmaArtikkeli}> Lisää yhdistelmäartikkeli </button>
+        <button onClick={toggleKirja}> Lisää kirja </button>
         {artikkeliAuki && <Lisaa createArtikkeli={lisaaArtikkeli} />}
+        {yhdistelmaArtikkeliAuki && <h4>Tähän yhdistelmäartikkelin lisäys</h4>}
+        {kirjaAuki && <h4>Tähän kirjan lisäys</h4>}
         <h2>Lähteet</h2>
         {/* tietokannan tyhennys */}
         <button onClick={clearDatabase}>Tyhjennä tietokanta</button>
