@@ -52,6 +52,19 @@
       "year": "2010",
       "volume": "4757",
       "pages": "445"
+    },
+    {
+      "id": "197d",
+      "articleKey": "etunimi12",
+      "author": [
+        {
+          "firstName": "Etunimi",
+          "lastName": "Sukunimi"
+        }
+      ],
+      "title": "moi",
+      "year": "2002",
+      "booktitle": "testi"
     }
   ]
 }

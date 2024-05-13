@@ -1,16 +1,14 @@
 import { useState } from 'react'
 
-const Lisaa = ({ createArtikkeli }) => {
+const LisaaYhdArtikkeli = ({ createYhdArtikkeli }) => {
 
-  const [newArtikkeli, setNewArtikkeli] = useState('')
+  const [newYhdArtikkeli, setNewYhdArtikkeli] = useState('')
   const [newKey, setNewKey] = useState('')
   const [newAuthors, setNewAuthors] = useState('')
   const [authors, setAuthors] = useState([])
   const [newTitle, setNewTitle] = useState('')
-  const [newJournal, setNewJournal] = useState('')
   const [newYear, setNewYear] = useState('')
-  const [newVolume, setNewVolume] = useState('')
-  const [newPages, setNewPages] = useState('')
+  const [newBookTitle, setNewBookTitle] = useState('')
 
   //tarkistus että vuosinumero on 4 numeroa pitkä
   //ja pienempi kuin tämä vuosi + 1
@@ -19,14 +17,11 @@ const Lisaa = ({ createArtikkeli }) => {
     return /^\d{4}$/.test(year) && parseInt(year) < currentYear+1;
   }
 
-  const validatePages = (pages) => {
-    return parseInt(pages) > 0
-  }
 
-  const addArtikkeli = (event) => {
+  const addYhdArtikkeli = (event) => {
     event.preventDefault()
 
-    if (!newKey || !newAuthors || !newTitle || !newJournal || !newYear || !newVolume || !newPages) {
+    if (!newKey || !newAuthors || !newTitle || !newYear || !newBookTitle) {
       alert('Kaikkien kenttien täyttäminen on pakollista')
       return
     }
@@ -37,38 +32,29 @@ const Lisaa = ({ createArtikkeli }) => {
       return
     }
 
-    if (!validatePages(newPages)) {
-      alert('Anna kelvollinen luku sivuille!')
-      return;
-    }
-
     if (!validateYear(newYear)) {
       alert('Vuosiluvun tulee olla nelinumeroinen ja maksimissaan tämämän hetkinen vuosiluku.')
       return;
     }
     
-    const newArtikkeli = {
+    const newYhdArtikkeli = {
       articleKey: newKey,
       author: authors,
       title: newTitle,
-      journal: newJournal,
       year: newYear,
-      volume: newVolume,
-      pages: newPages,
+      booktitle: newBookTitle
     }
 
-    setNewArtikkeli(newArtikkeli)
+    setNewYhdArtikkeli(newYhdArtikkeli)
 
-    createArtikkeli(newArtikkeli)
+    createYhdArtikkeli(newYhdArtikkeli)
     
-    setNewArtikkeli('')
+    setNewYhdArtikkeli('')
     setNewKey('')
     setNewAuthors('')
     setNewTitle('')
-    setNewJournal('')
     setNewYear('')
-    setNewVolume('')
-    setNewPages('')
+    setNewBookTitle('')
   }
 
   const handleKeyChange = (event) => {
@@ -103,25 +89,17 @@ const Lisaa = ({ createArtikkeli }) => {
     setNewTitle(event.target.value)
   }
 
-  const handleJournalChange = (event) => {
-    setNewJournal(event.target.value)
-  }
-
   const handleYearChange = (event) => {
     setNewYear(event.target.value)
   }
 
-  const handleVolumeChange = (event) => {
-    setNewVolume(event.target.value)
-  }
-
-  const handlePagesChange = (event) => {
-    setNewPages(event.target.value)
+  const handleBookTitleChange= (event) => {
+    setNewBookTitle(event.target.value)
   }
            
     return(
-    <form onSubmit={addArtikkeli}> 
-    <h2>Lisää artikkeli</h2>
+    <form onSubmit={addYhdArtikkeli}> 
+    <h2>Lisää yhdistelmäartikkeli</h2>
         <div>
           key: <input value={newKey} onChange={handleKeyChange} id='key-input'/>
         </div>
@@ -131,15 +109,11 @@ const Lisaa = ({ createArtikkeli }) => {
         <div>
           title: <input value={newTitle} onChange={handleTitleChange} id='title'/>
         </div>
-          journal: <input value={newJournal} onChange={handleJournalChange} id='journal'/>
         <div>
           year: <input value={newYear} onChange={handleYearChange} id='year'/>
         </div>
         <div>
-          volume: <input value={newVolume} onChange={handleVolumeChange} id='volume'/>
-        </div>
-        <div>
-          pages: <input value={newPages} onChange={handlePagesChange} id='pages'/>
+          booktitle: <input value={newBookTitle} onChange={handleBookTitleChange} id='booktitle'/>
         </div>
         <div>
           <button type="submit" id='lisaa-button'>lisää</button>
@@ -151,5 +125,4 @@ const Lisaa = ({ createArtikkeli }) => {
 
 
 
-
-export default Lisaa
+export default LisaaYhdArtikkeli

@@ -3,6 +3,7 @@ import axios from 'axios'
 import Lisaa from './components/lisaa'
 import { saveAs } from 'file-saver'
 import './App.css'
+import LisaaYhdArtikkeli from './components/lisaaYhdArtikkeli'
 
 function App() {
   const [artikkelit, setArtikkelit] = useState([])
@@ -32,6 +33,17 @@ function App() {
     })
   }
 
+  //tä
+  const lisaaYhdArtikkeli = (artikkeliObject) => {
+
+    axios
+    .post('http://localhost:3001/artikkelit', artikkeliObject)
+    .then(response => {
+      setArtikkelit(artikkelit.concat(artikkeliObject))
+    })
+    console.log("talleta")
+  }
+
 
   // artikkelien järjestys kirjoittajan sukunimen perusteella
   const jarjastaArtikkelit = () => {
@@ -46,6 +58,15 @@ function App() {
     // Funktio BibTeX-muotoisen merkkijonon rakentamiseksi
     const generateBibTeX = (artikkeli) => {
       const authors = artikkeli.author.map(author => `${author.lastName}, ${author.firstName}`).join(' and ')
+
+      if (artikkeli.booktitle)
+        return `@article{${artikkeli.articleKey},
+          author = {${authors}},
+          title = {${artikkeli.title}},
+          year = {${artikkeli.year}},
+          booktitle = {${artikkeli.booktitle}}
+          }`
+
       return `@article{${artikkeli.articleKey},
               author = {${authors}},
               title = {${artikkeli.title}},
@@ -121,7 +142,7 @@ function App() {
         <button onClick={toggleYhdistelmaArtikkeli}> Lisää yhdistelmäartikkeli </button>
         <button onClick={toggleKirja}> Lisää kirja </button>
         {artikkeliAuki && <Lisaa createArtikkeli={lisaaArtikkeli} />}
-        {yhdistelmaArtikkeliAuki && <h4>Tähän yhdistelmäartikkelin lisäys</h4>}
+        {yhdistelmaArtikkeliAuki && <LisaaYhdArtikkeli createYhdArtikkeli={lisaaYhdArtikkeli} />}
         {kirjaAuki && <h4>Tähän kirjan lisäys</h4>}
         <h2>Lähteet</h2>
         {/* tietokannan tyhennys */}
