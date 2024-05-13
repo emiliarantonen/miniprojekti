@@ -7,6 +7,9 @@ import './App.css'
 function App() {
   const [artikkelit, setArtikkelit] = useState([])
   const [message, setMessage] = useState('');
+  const [artikkeliAuki, setArtikkeliAuki] = useState(false);
+  const [yhdistelmaArtikkeliAuki, setYhdistelmaArtikkeliAuki] = useState(false);
+
 
   useEffect(() => {
     console.log('effect')
@@ -82,10 +85,26 @@ function App() {
     }
   };
 
+  const toggleArtikkeli = () => {
+    setArtikkeliAuki(!artikkeliAuki);
+    if(yhdistelmaArtikkeliAuki)
+      setYhdistelmaArtikkeliAuki(false)
+    console.log(yhdistelmaArtikkeliAuki)
+  };
+
+  const toggleYhdistelmaArtikkeli = () => {
+    setYhdistelmaArtikkeliAuki(!yhdistelmaArtikkeliAuki);
+    console.log(yhdistelmaArtikkeliAuki)
+    if(artikkeliAuki)
+      setArtikkeliAuki(false)
+  };
+
   return (
     <>
-        <h1>Lisää artikkeli</h1>
-        <Lisaa createArtikkeli={lisaaArtikkeli} />
+        <h1>Lisää lähteitä</h1>
+        <button onClick={toggleArtikkeli}> Lisää artikkeli </button>
+        <button onClick={toggleYhdistelmaArtikkeli}> Lisää yhdistelmäartikkeli </button>
+        {artikkeliAuki && <Lisaa createArtikkeli={lisaaArtikkeli} />}
         <h2>Lähteet</h2>
         {/* tietokannan tyhennys */}
         <button onClick={clearDatabase}>Tyhjennä tietokanta</button>
@@ -114,6 +133,7 @@ function App() {
           <p><pre>{generateBibTeX(artikkeli)}</pre></p>
         </div>
       ))}
+
     </>
   )
 }

@@ -121,6 +121,7 @@ const Lisaa = ({ createArtikkeli }) => {
            
     return(
     <form onSubmit={addArtikkeli}> 
+    <h2>Lisää artikkeli</h2>
         <div>
           key: <input value={newKey} onChange={handleKeyChange} id='key-input'/>
         </div>
