@@ -65,6 +65,18 @@
       "title": "moi",
       "year": "2002",
       "booktitle": "testi"
+    },
+    {
+      "id": "5b40",
+      "articleKey": "koi",
+      "author": [
+        {
+          "firstName": "12"
+        }
+      ],
+      "title": "er",
+      "year": "2002",
+      "booktitle": "e"
     }
   ]
 }

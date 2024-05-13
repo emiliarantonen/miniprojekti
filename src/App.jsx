@@ -60,7 +60,7 @@ function App() {
       const authors = artikkeli.author.map(author => `${author.lastName}, ${author.firstName}`).join(' and ')
 
       if (artikkeli.booktitle)
-        return `@article{${artikkeli.articleKey},
+        return `@inproceedings{${artikkeli.articleKey},
           author = {${authors}},
           title = {${artikkeli.title}},
           year = {${artikkeli.year}},
