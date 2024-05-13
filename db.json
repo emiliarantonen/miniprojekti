@@ -37,6 +37,21 @@
       "year": "2023",
       "volume": "100",
       "pages": "100-200"
+    },
+    {
+      "id": "33da",
+      "articleKey": "3",
+      "author": [
+        {
+          "firstName": "Matti",
+          "lastName": "Meikäläinen"
+        }
+      ],
+      "title": "Testi",
+      "journal": "Journal",
+      "year": "2010",
+      "volume": "4757",
+      "pages": "445"
     }
   ]
 }

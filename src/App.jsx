@@ -28,6 +28,16 @@ function App() {
     })
   }
 
+  // artikkelien järjestys kirjoittajan sukunimen perusteella
+  const sortArticles = () => {
+    const sortedArticles = [...artikkelit].sort((a, b) => {
+      const lastNameA = a.author[0].lastName.toLowerCase();
+      const lastNameB = b.author[0].lastName.toLowerCase();
+      return lastNameA.localeCompare(lastNameB);
+    });
+    setArtikkelit(sortedArticles);
+  }
+
     // Funktio BibTeX-muotoisen merkkijonon rakentamiseksi
     const generateBibTeX = (artikkeli) => {
       const authors = artikkeli.author.map(author => `${author.lastName}, ${author.firstName}`).join(' and ')
@@ -79,6 +89,7 @@ function App() {
         <h2>Lähteet</h2>
         {/* tietokannan tyhennys */}
         <button onClick={clearDatabase}>Tyhjennä tietokanta</button>
+        <button onClick={sortArticles}>Järjestä Artikkelit</button>
         <p>{message}</p>
         {artikkelit.map((artikkeli, indeksi) => (
         <div key={indeksi} className="artikkelituloste">
