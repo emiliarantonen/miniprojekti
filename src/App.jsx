@@ -30,15 +30,16 @@ function App() {
 
     // Funktio BibTeX-muotoisen merkkijonon rakentamiseksi
     const generateBibTeX = (artikkeli) => {
+      const authors = artikkeli.author.map(author => `${author.lastName}, ${author.firstName}`).join(' and ')
       return `@article{${artikkeli.articleKey},
-              author = {${artikkeli.author}},
+              author = {${authors}},
               title = {${artikkeli.title}},
               journal = {${artikkeli.journal}},
               year = {${artikkeli.year}},
               volume = {${artikkeli.volume}},
               pages = {${artikkeli.pages}}
-            }`;
-  };
+            }`
+    }
 
   //Luodaan sisältö valmiiksi tallennettavaa bibtex-tiedostoa varten
   let bibtexContent = ''
@@ -79,16 +80,22 @@ function App() {
         {/* tietokannan tyhennys */}
         <button onClick={clearDatabase}>Tyhjennä tietokanta</button>
         <p>{message}</p>
-      {artikkelit.map((artikkeli, indeksi) => (
+        {artikkelit.map((artikkeli, indeksi) => (
         <div key={indeksi} className="artikkelituloste">
           <p>[{indeksi + 1}]</p>
-          <p>{artikkeli.articleKey}. {artikkeli.author}. ({artikkeli.year}).</p>
+          <p>{artikkeli.author.map((author, index) => {
+            if (index === 0) {
+              return `${author.lastName}, ${author.firstName.charAt(0)}.`
+            } else {
+              return ` & ${author.firstName.charAt(0)}. ${author.lastName}`;
+            }
+          })}. ({artikkeli.year}).</p>
           <p className="artikkelititle">{artikkeli.title}.</p>
           <p className="artikkelijournal">{artikkeli.journal},</p>
           <p>{artikkeli.volume}, {artikkeli.pages}. </p>
-          
         </div>
-      ))}
+))}
+
       <button onClick={downloadBibTeXFile}>Lataa BibTeX-tiedosto</button>
       <h2>Lähteet BibTeX-muodossa</h2>
       {artikkelit.map((artikkeli, indeksi) => (

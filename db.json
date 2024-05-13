@@ -1,44 +1,42 @@
 {
   "artikkelit": [
     {
-      "id": "6e87",
-      "articleKey": "testkey",
-      "author": "test author",
-      "title": "test title",
-      "journal": "test journal",
-      "year": "2023",
-      "volume": "test volume",
+      "id": "8f2c",
+      "articleKey": "key0",
+      "author": [
+        {
+          "firstName": "Emilia",
+          "lastName": "Rantonen"
+        },
+        {
+          "firstName": "Minea",
+          "lastName": "Nupponen"
+        }
+      ],
+      "title": "Tutkimus",
+      "journal": "Journal",
+      "year": "2022",
+      "volume": "100",
       "pages": "22-45"
     },
     {
-      "id": "20b9",
-      "articleKey": "testkey",
-      "author": "test author",
-      "title": "test title",
-      "journal": "test journal",
+      "id": "e8f4",
+      "articleKey": "key1",
+      "author": [
+        {
+          "firstName": "Emilia",
+          "lastName": "Rantonen"
+        },
+        {
+          "firstName": "Minea",
+          "lastName": "Nupponen"
+        }
+      ],
+      "title": "Tutkimus 2",
+      "journal": "Journal",
       "year": "2023",
-      "volume": "test volume",
-      "pages": "22-45"
-    },
-    {
-      "id": "937e",
-      "articleKey": "testkey0",
-      "author": "test author0",
-      "title": "test title0",
-      "journal": "test journal0",
-      "year": "2023",
-      "volume": "test volume0",
-      "pages": "22-45"
-    },
-    {
-      "id": "6eff",
-      "articleKey": "testkey1",
-      "author": "test author1",
-      "title": "test title1",
-      "journal": "test journal1",
-      "year": "2023",
-      "volume": "test volume1",
-      "pages": "22-45"
+      "volume": "100",
+      "pages": "100-200"
     }
   ]
 }

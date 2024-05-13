@@ -4,7 +4,8 @@ const Lisaa = ({ createArtikkeli }) => {
 
   const [newArtikkeli, setNewArtikkeli] = useState('')
   const [newKey, setNewKey] = useState('')
-  const [newAuthor, setNewAuthor] = useState('')
+  const [newAuthors, setNewAuthors] = useState('')
+  const [authors, setAuthors] = useState([])
   const [newTitle, setNewTitle] = useState('')
   const [newJournal, setNewJournal] = useState('')
   const [newYear, setNewYear] = useState('')
@@ -25,9 +26,9 @@ const Lisaa = ({ createArtikkeli }) => {
   const addArtikkeli = (event) => {
     event.preventDefault()
 
-    if (!newKey || !newAuthor || !newTitle || !newJournal || !newYear || !newVolume || !newPages) {
+    if (!newKey || !newAuthors || !newTitle || !newJournal || !newYear || !newVolume || !newPages) {
       alert('Kaikkien kenttien täyttäminen on pakollista')
-      return;
+      return
     }
 
     //Tarkastetaan, että articlekey ei sisällä pilkkuja tai välilyöntejä.
@@ -48,7 +49,7 @@ const Lisaa = ({ createArtikkeli }) => {
     
     const newArtikkeli = {
       articleKey: newKey,
-      author: newAuthor,
+      author: authors,
       title: newTitle,
       journal: newJournal,
       year: newYear,
@@ -62,7 +63,7 @@ const Lisaa = ({ createArtikkeli }) => {
     
     setNewArtikkeli('')
     setNewKey('')
-    setNewAuthor('')
+    setNewAuthors('')
     setNewTitle('')
     setNewJournal('')
     setNewYear('')
@@ -75,7 +76,27 @@ const Lisaa = ({ createArtikkeli }) => {
   }
 
   const handleAuthorChange = (event) => {
-    setNewAuthor(event.target.value)
+    setNewAuthors(event.target.value)
+    const authors = event.target.value
+    // authorit on eroteltu 'and'
+    const names = authors.split(' and ')
+    const authorsArray = []
+
+    for (let i = 0; i < names.length; i++) {
+      const name = names[i].trim()
+
+      if (name.includes(',')) {
+        // Muoto: Sukunimi, Etunimi
+        const [lastName, firstName] = name.split(',').map(item => item.trim())
+        authorsArray.push({ firstName, lastName })
+      } else {
+        // Muoto: Etunimi Sukunimi
+        const [firstName, lastName] = name.split(' ')
+        authorsArray.push({ firstName, lastName })
+      }
+    }
+    setAuthors(authorsArray)
+  
   }
 
   const handleTitleChange = (event) => {
@@ -104,7 +125,7 @@ const Lisaa = ({ createArtikkeli }) => {
           key: <input value={newKey} onChange={handleKeyChange} id='key-input'/>
         </div>
         <div>
-          author: <input value={newAuthor} onChange={handleAuthorChange} id='author'/>
+          author: <input value={newAuthors} onChange={handleAuthorChange} id='author'/>
         </div>
         <div>
           title: <input value={newTitle} onChange={handleTitleChange} id='title'/>
