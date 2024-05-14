@@ -160,23 +160,22 @@ function App() {
           <p>[{indeksi + 1}]</p>
           <p>{artikkeli.author.map((author, index) => {
             console.log(artikkeli)
+            // Tulostuksissa näytettävän nimen muotoilu
             let fullname = ""
-
             if (!author.lastName) {
               fullname = author.firstName
             } else {
               fullname = `${author.firstName} ${author.lastName}`
             }
 
+            // Nimi tulostukseen
             if (index === 0) {
-              return fullname
-            // and ennen vikaa authoria
+              return fullname               // Ensimmäinen authori ilman merkkejä
             } else if (index === artikkeli.author.length-1) {
-              return ` and ${fullname}`;
+              return ` and ${fullname}`;    // and ennen vikaa authoria
             }
-            // pilkut muiden authorien väliin
             else {
-              return `, ${fullname}`;
+              return `, ${fullname}`;       // pilkut muiden authorien väliin
             }
           })}.</p>
           <p className="artikkelititle">{artikkeli.title}.</p>
@@ -195,7 +194,6 @@ function App() {
           <p>{artikkeli.year}.</p>
         </div>
 ))}
-
       <button onClick={downloadBibTeXFile}>Lataa BibTeX-tiedosto</button>
       <h2>Lähteet BibTeX-muodossa</h2>
       {artikkelit.map((artikkeli, indeksi) => (
