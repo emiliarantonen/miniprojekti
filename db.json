@@ -56,6 +56,75 @@
       "title": "kalkkuna",
       "year": "2000",
       "booktitle": "JUUSTO"
+    },
+    {
+      "id": "c2ba",
+      "articleKey": "10293",
+      "author": [
+        {
+          "firstName": "fuksi",
+          "lastName": "eelis"
+        },
+        {
+          "firstName": "fuksi",
+          "lastName": "samu"
+        },
+        {
+          "firstName": "fuksi",
+          "lastName": "vili"
+        }
+      ],
+      "title": "fkoaskd",
+      "journal": "asdokoasd",
+      "year": "2000",
+      "volume": "2123",
+      "pages": "123"
+    },
+    {
+      "id": "3b10",
+      "articleKey": "123",
+      "author": [
+        {
+          "firstName": "fuksi",
+          "lastName": "samu"
+        },
+        {
+          "firstName": "fuksi",
+          "lastName": "eelis"
+        }
+      ],
+      "title": "fuksit",
+      "journal": "fuski",
+      "year": "1969",
+      "volume": "132",
+      "pages": "1232"
+    },
+    {
+      "id": "db5c",
+      "articleKey": "asd",
+      "author": [
+        {
+          "firstName": "fuksi",
+          "lastName": "samu"
+        },
+        {
+          "firstName": "fuksi",
+          "lastName": "eelis"
+        },
+        {
+          "firstName": "fuksi",
+          "lastName": "sanni"
+        },
+        {
+          "firstName": "fuksi",
+          "lastName": "tero"
+        }
+      ],
+      "title": "123",
+      "journal": "123",
+      "year": "1233",
+      "volume": "123",
+      "pages": "123"
     }
   ]
 }

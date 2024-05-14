@@ -154,10 +154,15 @@ function App() {
           <p>[{indeksi + 1}]</p>
           <p>{artikkeli.author.map((author, index) => {
             console.log(artikkeli)
+            console.log(artikkelit.length)
+            console.log(index)
             if (index === 0) {
               return `${author.lastName}, ${author.firstName.charAt(0)}`
-            } else {
-              return ` & ${author.firstName.charAt(0)}. ${author.lastName}`;
+            } else if (index === artikkeli.author.length-1) {
+              return ` and ${author.lastName}, ${author.firstName.charAt(0)}`;
+            }
+            else {
+              return `, ${author.lastName}, ${author.firstName.charAt(0)}`;
             }
           })}. ({artikkeli.year}).</p>
           <p className="artikkelititle">{artikkeli.title}.</p>
