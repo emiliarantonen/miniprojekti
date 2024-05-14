@@ -48,17 +48,16 @@ function App() {
   // artikkelien järjestys kirjoittajan sukunimen perusteella
   const jarjastaArtikkelit = () => {
     const sortedArticles = [...artikkelit].sort((a, b) => {
-      //If lohko, koska softa hyväksyy authoriksi sukunimettömänkin
-      if (a.author[0].lastName && b.author[0].lastName) {
-        const lastNameA = a.author[0].lastName.toLowerCase();
-        const lastNameB = b.author[0].lastName.toLowerCase();
-        return lastNameA.localeCompare(lastNameB);
-      }
-      const lastNameA = a.author[0].firstName.toLowerCase();
-      const lastNameB = b.author[0].firstName.toLowerCase();
-      return lastNameA.localeCompare(lastNameB);
-    });
-    setArtikkelit(sortedArticles);
+      if (a.author[0].lastName === b.author[0].lastName) {
+        const firstNameA = a.author[0].firstName.toLowerCase()
+        const firstNameB = b.author[0].firstName.toLowerCase()
+        return firstNameA.localeCompare(firstNameB)
+      } 
+      const lastNameA = a.author[0].lastName.toLowerCase()
+      const lastNameB = b.author[0].lastName.toLowerCase()
+      return lastNameA.localeCompare(lastNameB)
+    })
+    setArtikkelit(sortedArticles)
   }
 
     // Funktio BibTeX-muotoisen merkkijonon rakentamiseksi
@@ -161,13 +160,7 @@ function App() {
           <p>{artikkeli.author.map((author, index) => {
             console.log(artikkeli)
             // Tulostuksissa näytettävän nimen muotoilu
-            let fullname = ""
-            if (!author.lastName) {
-              fullname = author.firstName
-            } else {
-              fullname = `${author.firstName} ${author.lastName}`
-            }
-
+            let fullname = `${author.firstName} ${author.lastName}`
             // Nimi tulostukseen
             if (index === 0) {
               return fullname               // Ensimmäinen authori ilman merkkejä
