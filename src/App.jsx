@@ -153,7 +153,7 @@ function App() {
         <h2>Lähteet</h2>
         {/* tietokannan tyhennys */}
         <button onClick={clearDatabase}>Tyhjennä tietokanta</button>
-        <button onClick={jarjastaArtikkelit}>Järjestä Artikkelit</button>
+        <button id="jarjesta-button" onClick={jarjastaArtikkelit}>Järjestä Artikkelit</button>
         <p>{message}</p>
         {artikkelit.map((artikkeli, indeksi) => (
         <div key={indeksi} className="artikkelituloste">
