@@ -154,30 +154,32 @@ function App() {
           <p>[{indeksi + 1}]</p>
           <p>{artikkeli.author.map((author, index) => {
             console.log(artikkeli)
-            console.log(artikkelit.length)
-            console.log(index)
+
             if (index === 0) {
-              return `${author.lastName}, ${author.firstName.charAt(0)}`
+              return `${author.firstName} ${author.lastName}`
+            // and ennen vikaa authoria
             } else if (index === artikkeli.author.length-1) {
-              return ` and ${author.lastName}, ${author.firstName.charAt(0)}`;
+              return ` and ${author.firstName} ${author.lastName}`;
             }
+            // pilkut muiden authorien väliin
             else {
-              return `, ${author.lastName}, ${author.firstName.charAt(0)}`;
+              return `, ${author.firstName} ${author.lastName}`;
             }
-          })}. ({artikkeli.year}).</p>
+          })}.</p>
           <p className="artikkelititle">{artikkeli.title}.</p>
           { artikkeli.journal &&
             <>
               <p className="artikkelijournal">{artikkeli.journal},</p> 
-              <p>{artikkeli.volume}, {artikkeli.pages}. </p> 
+              <p>{artikkeli.volume}, {artikkeli.pages}.</p> 
             </>
           }
           {
             artikkeli.booktitle &&
             <>
-              <p>{artikkeli.booktitle}</p>
+              <p>{artikkeli.booktitle},</p>
             </>
           }
+          <p>{artikkeli.year}.</p>
         </div>
 ))}
 

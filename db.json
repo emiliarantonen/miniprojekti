@@ -125,6 +125,54 @@
       "year": "1233",
       "volume": "123",
       "pages": "123"
+    },
+    {
+      "id": "bd3f",
+      "articleKey": "avain",
+      "author": [
+        {
+          "firstName": "fuksi",
+          "lastName": "eelis"
+        },
+        {
+          "firstName": "fuksi",
+          "lastName": "samu"
+        },
+        {
+          "firstName": "fuksi",
+          "lastName": "vili"
+        }
+      ],
+      "title": "Title",
+      "journal": "Journal",
+      "year": "2000",
+      "volume": "Vol 1",
+      "pages": "123-132"
+    },
+    {
+      "id": "3acc",
+      "articleKey": "avain",
+      "author": [
+        {
+          "firstName": "fuksi",
+          "lastName": "samu"
+        },
+        {
+          "firstName": "fuksi",
+          "lastName": "eelis"
+        },
+        {
+          "firstName": "fuksi",
+          "lastName": "sanni"
+        },
+        {
+          "firstName": "fuksi",
+          "lastName": "tero"
+        }
+      ],
+      "title": "Title",
+      "year": "2000",
+      "booktitle": "Booktitle"
     }
   ]
 }
