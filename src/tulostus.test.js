@@ -145,3 +145,41 @@ test('Adding composite article and prints them to the site', async () => {
         expect(neljas).toBeInTheDocument()
     })
 })
+
+//Testataan usean yhdistelmäartikkelin lisäys
+test('Adding multiple composite articles and printing them to the site', async () => {
+    const user = userEvent.setup()
+    const { container } = render(<App />)
+
+    const artikkeliButton = container.querySelector('#yhdistelma-button')
+    await user.click(artikkeliButton)
+
+    const keyInput = container.querySelector('#key-input')
+    const authorInput = container.querySelector('#author')
+    const titleInput = container.querySelector('#title')
+    const yearInput = container.querySelector('#year')
+    const bookTitle = container.querySelector('#booktitle')
+    const sendButton = container.querySelector('#lisaa-button')
+  
+    for (let i = 0; i < 2; i++) {
+        await user.type(keyInput, `testkey`)
+        await user.type(authorInput, `test author${i}`)
+        await user.type(titleInput, `test title${i}`)
+        await user.type(yearInput, `200${i}`)
+        await user.type(bookTitle, `test name${i}`)
+        await user.click(sendButton)
+    }
+
+    await waitFor(() => {
+        for (let i = 0; i < 2; i++) {
+            const eka = screen.getByText(`test author${i}.`)
+            expect(eka).toBeInTheDocument()
+            const toka = screen.getByText(`test title${i}.`)
+            expect(toka).toBeInTheDocument()
+            const kolmas = screen.getByText(`test name${i},`)
+            expect(kolmas).toBeInTheDocument()
+            const neljas = screen.getByText(`200${i}.`)
+            expect(neljas).toBeInTheDocument()
+        }
+    })
+})
