@@ -1,203 +1,139 @@
 {
   "artikkelit": [
     {
-      "id": "7a77",
-      "articleKey": "123",
+      "id": "160a",
+      "articleKey": "testkey",
       "author": [
         {
-          "firstName": "123",
-          "lastName": "456"
+          "firstName": "Author",
+          "lastName": "Test"
         }
       ],
-      "title": "123",
-      "journal": "123",
-      "year": "1233",
-      "volume": "123",
-      "pages": "123"
+      "title": "test title",
+      "journal": "test journal",
+      "year": "2023",
+      "volume": "test volume",
+      "pages": "22-45"
     },
     {
-      "id": "e069",
-      "articleKey": "AVAIN",
+      "id": "cfcc",
+      "articleKey": "testkey",
       "author": [
         {
-          "firstName": "123"
+          "firstName": "Test",
+          "lastName": "Author"
         }
       ],
-      "title": "1233",
-      "journal": "123",
-      "year": "1223",
-      "volume": "1223",
-      "pages": "1"
+      "title": "test title",
+      "journal": "test journal",
+      "year": "2023",
+      "volume": "test volume",
+      "pages": "22-45"
     },
     {
-      "id": "528a",
-      "articleKey": "KOIRA",
+      "id": "7d35",
+      "articleKey": "testkey",
       "author": [
         {
-          "firstName": "fuksi",
-          "lastName": "eelis"
+          "firstName": "Yeet",
+          "lastName": "Test"
         }
       ],
-      "title": "lololo",
-      "journal": "ololol",
-      "year": "1231",
-      "volume": "123",
-      "pages": "123"
+      "title": "test title",
+      "journal": "test journal",
+      "year": "2023",
+      "volume": "test volume",
+      "pages": "22-45"
     },
     {
-      "id": "7d59",
-      "articleKey": "1231",
+      "id": "092d",
+      "articleKey": "testkey",
       "author": [
         {
-          "firstName": "koira",
-          "lastName": "kisa"
+          "firstName": "Author",
+          "lastName": "Test"
         }
       ],
-      "title": "kalkkuna",
+      "title": "2nd test title",
+      "journal": "test journal",
+      "year": "2023",
+      "volume": "test volume",
+      "pages": "22-45"
+    },
+    {
+      "id": "a5e1",
+      "articleKey": "testkey",
+      "author": [
+        {
+          "firstName": "Ceed",
+          "lastName": "Test"
+        }
+      ],
+      "title": "test title",
+      "journal": "test journal",
+      "year": "2023",
+      "volume": "test volume",
+      "pages": "22-45"
+    },
+    {
+      "id": "db06",
+      "articleKey": "testkey",
+      "author": [
+        {
+          "firstName": "Beed",
+          "lastName": "Test"
+        }
+      ],
+      "title": "test title",
+      "journal": "test journal",
+      "year": "2023",
+      "volume": "test volume",
+      "pages": "22-45"
+    },
+    {
+      "id": "a439",
+      "articleKey": "testkey",
+      "author": [
+        {
+          "firstName": "Beed",
+          "lastName": "Beed"
+        }
+      ],
+      "title": "test title",
+      "journal": "test journal",
+      "year": "2023",
+      "volume": "test volume",
+      "pages": "22-45"
+    },
+    {
+      "id": "307a",
+      "articleKey": "testkey",
+      "author": [
+        {
+          "firstName": "Author",
+          "lastName": "Authorer"
+        }
+      ],
+      "title": "test title",
+      "journal": "test journal",
+      "year": "2023",
+      "volume": "test volume",
+      "pages": "22-45"
+    },
+    {
+      "id": "7ce0",
+      "articleKey": "01925",
+      "author": [
+        {
+          "firstName": "etu",
+          "lastName": "suku"
+        }
+      ],
+      "title": "title",
+      "journal": "journal",
       "year": "2000",
-      "booktitle": "JUUSTO"
-    },
-    {
-      "id": "c2ba",
-      "articleKey": "10293",
-      "author": [
-        {
-          "firstName": "fuksi",
-          "lastName": "eelis"
-        },
-        {
-          "firstName": "fuksi",
-          "lastName": "samu"
-        },
-        {
-          "firstName": "fuksi",
-          "lastName": "vili"
-        }
-      ],
-      "title": "fkoaskd",
-      "journal": "asdokoasd",
-      "year": "2000",
-      "volume": "2123",
-      "pages": "123"
-    },
-    {
-      "id": "3b10",
-      "articleKey": "123",
-      "author": [
-        {
-          "firstName": "fuksi",
-          "lastName": "samu"
-        },
-        {
-          "firstName": "fuksi",
-          "lastName": "eelis"
-        }
-      ],
-      "title": "fuksit",
-      "journal": "fuski",
-      "year": "1969",
-      "volume": "132",
-      "pages": "1232"
-    },
-    {
-      "id": "db5c",
-      "articleKey": "asd",
-      "author": [
-        {
-          "firstName": "fuksi",
-          "lastName": "samu"
-        },
-        {
-          "firstName": "fuksi",
-          "lastName": "eelis"
-        },
-        {
-          "firstName": "fuksi",
-          "lastName": "sanni"
-        },
-        {
-          "firstName": "fuksi",
-          "lastName": "tero"
-        }
-      ],
-      "title": "123",
-      "journal": "123",
-      "year": "1233",
-      "volume": "123",
-      "pages": "123"
-    },
-    {
-      "id": "bd3f",
-      "articleKey": "avain",
-      "author": [
-        {
-          "firstName": "fuksi",
-          "lastName": "eelis"
-        },
-        {
-          "firstName": "fuksi",
-          "lastName": "samu"
-        },
-        {
-          "firstName": "fuksi",
-          "lastName": "vili"
-        }
-      ],
-      "title": "Title",
-      "journal": "Journal",
-      "year": "2000",
-      "volume": "Vol 1",
-      "pages": "123-132"
-    },
-    {
-      "id": "3acc",
-      "articleKey": "avain",
-      "author": [
-        {
-          "firstName": "fuksi",
-          "lastName": "samu"
-        },
-        {
-          "firstName": "fuksi",
-          "lastName": "eelis"
-        },
-        {
-          "firstName": "fuksi",
-          "lastName": "sanni"
-        },
-        {
-          "firstName": "fuksi",
-          "lastName": "tero"
-        }
-      ],
-      "title": "Title",
-      "year": "2000",
-      "booktitle": "Booktitle"
-    },
-    {
-      "id": "db1c",
-      "articleKey": "1254",
-      "author": [
-        {
-          "firstName": "fuksi",
-          "lastName": "samu"
-        },
-        {
-          "firstName": "fuksi",
-          "lastName": "eelis"
-        },
-        {
-          "firstName": "fuksi",
-          "lastName": "sanni"
-        },
-        {
-          "firstName": "fuksi",
-          "lastName": "tero"
-        }
-      ],
-      "title": "Aaaa",
-      "year": "2013",
-      "booktitle": "ssss"
+      "volume": "vol1:",
+      "pages": "123-222"
     }
   ]
 }

@@ -46,6 +46,8 @@ const Lisaa = ({ createArtikkeli }) => {
       alert('Vuosiluvun tulee olla nelinumeroinen ja maksimissaan tämämän hetkinen vuosiluku.')
       return;
     }
+
+    //TODO: authorin etunimen ja sukunimen syöttämisen tarkastus
     
     const newArtikkeli = {
       articleKey: newKey,
