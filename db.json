@@ -43,6 +43,19 @@
       "year": "1231",
       "volume": "123",
       "pages": "123"
+    },
+    {
+      "id": "7d59",
+      "articleKey": "1231",
+      "author": [
+        {
+          "firstName": "koira",
+          "lastName": "kisa"
+        }
+      ],
+      "title": "kalkkuna",
+      "year": "2000",
+      "booktitle": "JUUSTO"
     }
   ]
 }
