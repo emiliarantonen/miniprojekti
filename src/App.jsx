@@ -167,6 +167,12 @@ function App() {
               <p>{artikkeli.volume}, {artikkeli.pages}. </p> 
             </>
           }
+          {
+            artikkeli.booktitle &&
+            <>
+              <p>{artikkeli.booktitle}</p>
+            </>
+          }
         </div>
 ))}
 
