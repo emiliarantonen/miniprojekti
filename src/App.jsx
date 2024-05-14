@@ -182,7 +182,7 @@ function App() {
           { artikkeli.journal &&
             <>
               <p className="artikkelijournal">{artikkeli.journal},</p> 
-              <p>{artikkeli.volume}, {artikkeli.pages}.</p> 
+              <p>{`${artikkeli.volume}:${artikkeli.pages},`}</p> 
             </>
           }
           {
