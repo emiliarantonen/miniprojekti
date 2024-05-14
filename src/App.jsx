@@ -48,8 +48,14 @@ function App() {
   // artikkelien järjestys kirjoittajan sukunimen perusteella
   const jarjastaArtikkelit = () => {
     const sortedArticles = [...artikkelit].sort((a, b) => {
-      const lastNameA = a.author[0].lastName.toLowerCase();
-      const lastNameB = b.author[0].lastName.toLowerCase();
+      //If lohko, koska softa hyväksyy authoriksi sukunimettömänkin
+      if (a.author[0].lastName && b.author[0].lastName) {
+        const lastNameA = a.author[0].lastName.toLowerCase();
+        const lastNameB = b.author[0].lastName.toLowerCase();
+        return lastNameA.localeCompare(lastNameB);
+      }
+      const lastNameA = a.author[0].firstName.toLowerCase();
+      const lastNameB = b.author[0].firstName.toLowerCase();
       return lastNameA.localeCompare(lastNameB);
     });
     setArtikkelit(sortedArticles);
@@ -154,16 +160,23 @@ function App() {
           <p>[{indeksi + 1}]</p>
           <p>{artikkeli.author.map((author, index) => {
             console.log(artikkeli)
+            let fullname = ""
+
+            if (!author.lastName) {
+              fullname = author.firstName
+            } else {
+              fullname = `${author.firstName} ${author.lastName}`
+            }
 
             if (index === 0) {
-              return `${author.firstName} ${author.lastName}`
+              return fullname
             // and ennen vikaa authoria
             } else if (index === artikkeli.author.length-1) {
-              return ` and ${author.firstName} ${author.lastName}`;
+              return ` and ${fullname}`;
             }
             // pilkut muiden authorien väliin
             else {
-              return `, ${author.firstName} ${author.lastName}`;
+              return `, ${fullname}`;
             }
           })}.</p>
           <p className="artikkelititle">{artikkeli.title}.</p>

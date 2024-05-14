@@ -173,6 +173,31 @@
       "title": "Title",
       "year": "2000",
       "booktitle": "Booktitle"
+    },
+    {
+      "id": "db1c",
+      "articleKey": "1254",
+      "author": [
+        {
+          "firstName": "fuksi",
+          "lastName": "samu"
+        },
+        {
+          "firstName": "fuksi",
+          "lastName": "eelis"
+        },
+        {
+          "firstName": "fuksi",
+          "lastName": "sanni"
+        },
+        {
+          "firstName": "fuksi",
+          "lastName": "tero"
+        }
+      ],
+      "title": "Aaaa",
+      "year": "2013",
+      "booktitle": "ssss"
     }
   ]
 }
