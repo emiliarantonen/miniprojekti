@@ -1,3 +1,82 @@
 {
-  "artikkelit": []
+  "artikkelit": [
+    {
+      "id": "8f2c",
+      "articleKey": "key0",
+      "author": [
+        {
+          "firstName": "Emilia",
+          "lastName": "Rantonen"
+        },
+        {
+          "firstName": "Minea",
+          "lastName": "Nupponen"
+        }
+      ],
+      "title": "Tutkimus",
+      "journal": "Journal",
+      "year": "2022",
+      "volume": "100",
+      "pages": "22-45"
+    },
+    {
+      "id": "e8f4",
+      "articleKey": "key1",
+      "author": [
+        {
+          "firstName": "Emilia",
+          "lastName": "Rantonen"
+        },
+        {
+          "firstName": "Minea",
+          "lastName": "Nupponen"
+        }
+      ],
+      "title": "Tutkimus 2",
+      "journal": "Journal",
+      "year": "2023",
+      "volume": "100",
+      "pages": "100-200"
+    },
+    {
+      "id": "33da",
+      "articleKey": "3",
+      "author": [
+        {
+          "firstName": "Matti",
+          "lastName": "Meikäläinen"
+        }
+      ],
+      "title": "Testi",
+      "journal": "Journal",
+      "year": "2010",
+      "volume": "4757",
+      "pages": "445"
+    },
+    {
+      "id": "197d",
+      "articleKey": "etunimi12",
+      "author": [
+        {
+          "firstName": "Etunimi",
+          "lastName": "Sukunimi"
+        }
+      ],
+      "title": "moi",
+      "year": "2002",
+      "booktitle": "testi"
+    },
+    {
+      "id": "5b40",
+      "articleKey": "koi",
+      "author": [
+        {
+          "firstName": "12"
+        }
+      ],
+      "title": "er",
+      "year": "2002",
+      "booktitle": "e"
+    }
+  ]
 }
