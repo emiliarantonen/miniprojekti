@@ -97,3 +97,33 @@ test('Adding multiple articles prints them to the site', async () => {
         }
     })
 })
+
+//Testataan yhdistelmäartikkelin testaus
+test('Adding composite article and prints them to the site', async () => {
+    const user = userEvent.setup()
+    const { container } = render(<App />)
+
+    const artikkeliButton = container.querySelector('#yhdistelma-button')
+    await user.click(artikkeliButton)
+
+    const keyInput = container.querySelector('#key-input')
+    const authorInput = container.querySelector('#author')
+    const titleInput = container.querySelector('#title')
+    const yearInput = container.querySelector('#year')
+    const bookTitle = container.querySelector('#booktitle')
+    const sendButton = container.querySelector('#lisaa-button')
+  
+    await user.type(keyInput, `testkey`)
+    await user.type(authorInput, `test author`)
+    await user.type(titleInput, `test title`)
+    await user.type(yearInput, '2023')
+    await user.type(bookTitle, 'test name')
+    await user.click(sendButton)
+
+    await waitFor(() => {
+        const eka = screen.getByText(`author, t. (2023).`)
+        expect(eka).toBeInTheDocument()
+        const toka = screen.getByText(`test title.`)
+        expect(toka).toBeInTheDocument()
+    })
+})
