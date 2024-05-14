@@ -153,15 +153,20 @@ function App() {
         <div key={indeksi} className="artikkelituloste">
           <p>[{indeksi + 1}]</p>
           <p>{artikkeli.author.map((author, index) => {
+            console.log(artikkeli)
             if (index === 0) {
-              return `${author.lastName}, ${author.firstName.charAt(0)}.`
+              return `${author.lastName}, ${author.firstName.charAt(0)}`
             } else {
               return ` & ${author.firstName.charAt(0)}. ${author.lastName}`;
             }
           })}. ({artikkeli.year}).</p>
           <p className="artikkelititle">{artikkeli.title}.</p>
-          <p className="artikkelijournal">{artikkeli.journal},</p>
-          <p>{artikkeli.volume}, {artikkeli.pages}. </p>
+          { artikkeli.journal &&
+            <>
+              <p className="artikkelijournal">{artikkeli.journal},</p> 
+              <p>{artikkeli.volume}, {artikkeli.pages}. </p> 
+            </>
+          }
         </div>
 ))}
 
