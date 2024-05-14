@@ -34,7 +34,9 @@ test('Lisaa updates parent state and calls onSubmit', async () => {
     //testataan, että lisaaArtikkeli kutsutaan oikealla parametrilla
     expect(lisaaArtikkeli).toHaveBeenCalledWith({
       articleKey: 'testkey',
-      author: 'test author',
+      author: [{firstName: "test",
+        lastName: "author"
+      }],
       title: 'test title',
       journal: 'test journal',
       year: '2023',
@@ -64,4 +66,3 @@ test('Lisaa displays alert when not all fields are filled', async () => {
   alertSpy.mockRestore()
 
 })
-

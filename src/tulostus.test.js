@@ -17,6 +17,10 @@ test('Adding an article prints it to the site', async () => {
     const user = userEvent.setup()
     const { container } = render(<App />)
 
+    // Oikea lomake auki
+    const artikkeliButton = container.querySelector('#artikkeli-button')
+    await user.click(artikkeliButton)
+
     //Input elementit talteen
     const keyInput = container.querySelector('#key-input')
     const authorInput = container.querySelector('#author')
@@ -42,7 +46,7 @@ test('Adding an article prints it to the site', async () => {
         tulostettuna */
     await waitFor(() => {
         //muotoilun takia <p>key. author. (vuosi.) testataan vastaavasti
-        const eka = screen.getByText(`testkey. test author. (2023).`)
+        const eka = screen.getByText(`author, t. (2023).`)
         expect(eka).toBeInTheDocument()
 
         const toka = screen.getByText(`test title.`)
@@ -58,6 +62,9 @@ test('Adding an article prints it to the site', async () => {
 test('Adding multiple articles prints them to the site', async () => {
     const user = userEvent.setup()
     const { container } = render(<App />)
+
+    const artikkeliButton = container.querySelector('#artikkeli-button')
+    await user.click(artikkeliButton)
 
     const keyInput = container.querySelector('#key-input')
     const authorInput = container.querySelector('#author')
@@ -81,7 +88,7 @@ test('Adding multiple articles prints them to the site', async () => {
 
     await waitFor(() => {
         for (let i = 0; i < 2; i++) {
-            const eka = screen.getByText(`testkey${i}. test author${i}. (2023).`)
+            const eka = screen.getByText(`author${i}, t. (2023).`)
             expect(eka).toBeInTheDocument()
             const toka = screen.getByText(`test title${i}.`)
             expect(toka).toBeInTheDocument()
