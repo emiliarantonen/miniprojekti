@@ -98,7 +98,7 @@ test('Adding multiple articles prints them to the site', async () => {
     })
 })
 
-//Testataan yhdistelmäartikkelin testaus
+//Testataan yhdistelmäartikkelin luonti
 test('Adding composite article and prints them to the site', async () => {
     const user = userEvent.setup()
     const { container } = render(<App />)
