@@ -42,7 +42,7 @@ Check Missing Fields Alert
     Go To    ${BASE_URL}
 
     # Tyhjennä tietokanta ennen testiä
-    Click Button    xpath=//button[contains(text(), 'Tyhjennä tietokanta')]
+    # Click Button    xpath=//button[contains(text(), 'Tyhjennä tietokanta')]
     Sleep    2s
 
     # Haetaan artikkelien lukumäärä ennen testin suorittamista
