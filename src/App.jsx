@@ -138,9 +138,9 @@ function App() {
   return (
     <>
         <h1>Lisää lähteitä</h1>
-        <button onClick={toggleArtikkeli}> Lisää artikkeli </button>
-        <button onClick={toggleYhdistelmaArtikkeli}> Lisää yhdistelmäartikkeli </button>
-        <button onClick={toggleKirja}> Lisää kirja </button>
+        <button id='artikkeli-button' onClick={toggleArtikkeli}> Lisää artikkeli </button>
+        <button id='yhdistelma-button' onClick={toggleYhdistelmaArtikkeli}> Lisää yhdistelmäartikkeli </button>
+        <button id='kirja-button'onClick={toggleKirja}> Lisää kirja </button>
         {artikkeliAuki && <Lisaa createArtikkeli={lisaaArtikkeli} />}
         {yhdistelmaArtikkeliAuki && <LisaaYhdArtikkeli createYhdArtikkeli={lisaaYhdArtikkeli} />}
         {kirjaAuki && <h4>Tähän kirjan lisäys</h4>}

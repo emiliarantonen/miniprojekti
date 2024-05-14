@@ -1,3 +1,48 @@
 {
-  "artikkelit": []
+  "artikkelit": [
+    {
+      "id": "7a77",
+      "articleKey": "123",
+      "author": [
+        {
+          "firstName": "123",
+          "lastName": "456"
+        }
+      ],
+      "title": "123",
+      "journal": "123",
+      "year": "1233",
+      "volume": "123",
+      "pages": "123"
+    },
+    {
+      "id": "e069",
+      "articleKey": "AVAIN",
+      "author": [
+        {
+          "firstName": "123"
+        }
+      ],
+      "title": "1233",
+      "journal": "123",
+      "year": "1223",
+      "volume": "1223",
+      "pages": "1"
+    },
+    {
+      "id": "528a",
+      "articleKey": "KOIRA",
+      "author": [
+        {
+          "firstName": "fuksi",
+          "lastName": "eelis"
+        }
+      ],
+      "title": "lololo",
+      "journal": "ololol",
+      "year": "1231",
+      "volume": "123",
+      "pages": "123"
+    }
+  ]
 }
