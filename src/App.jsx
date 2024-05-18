@@ -4,6 +4,7 @@ import Lisaa from './components/lisaa'
 import { saveAs } from 'file-saver'
 import './App.css'
 import LisaaYhdArtikkeli from './components/lisaaYhdArtikkeli'
+import DOI from './components/doi'
 
 function App() {
   const [artikkelit, setArtikkelit] = useState([])
@@ -11,6 +12,7 @@ function App() {
   const [artikkeliAuki, setArtikkeliAuki] = useState(false);
   const [yhdistelmaArtikkeliAuki, setYhdistelmaArtikkeliAuki] = useState(false);
   const [kirjaAuki, setKirjaAuki] = useState(false);
+  const [doiAuki, setDOIAuki] = useState(false)
 
 
   useEffect(() => {
@@ -120,6 +122,8 @@ function App() {
     console.log(yhdistelmaArtikkeliAuki)
     if(kirjaAuki)
       setKirjaAuki(false)
+    if(doiAuki)
+      setDOIAuki(false)
   };
 
   const toggleYhdistelmaArtikkeli = () => {
@@ -129,6 +133,8 @@ function App() {
       setArtikkeliAuki(false)
     if(kirjaAuki)
       setKirjaAuki(false)
+    if(doiAuki)
+      setDOIAuki(false)
   };
 
   const toggleKirja = () => {
@@ -138,17 +144,31 @@ function App() {
       setArtikkeliAuki(false)
     if(yhdistelmaArtikkeliAuki)
       setYhdistelmaArtikkeliAuki(false)
+    if(doiAuki)
+      setDOIAuki(false)
   };
 
+  const toggleDOI = () => {
+    setDOIAuki(!doiAuki)
+    if(artikkeliAuki)
+      setArtikkeliAuki(false)
+    if(yhdistelmaArtikkeliAuki)
+      setYhdistelmaArtikkeliAuki(false)
+    console.log(yhdistelmaArtikkeliAuki)
+    if(kirjaAuki)
+      setKirjaAuki(false)
+  }
   return (
     <>
         <h1>Lisää lähteitä</h1>
         <button id='artikkeli-button' onClick={toggleArtikkeli}> Lisää artikkeli </button>
         <button id='yhdistelma-button' onClick={toggleYhdistelmaArtikkeli}> Lisää yhdistelmäartikkeli </button>
         <button id='kirja-button'onClick={toggleKirja}> Lisää kirja </button>
+        <button id='doi-button'onClick={toggleDOI}> Lisää DOI-tunnisteella </button>
         {artikkeliAuki && <Lisaa createArtikkeli={lisaaArtikkeli} />}
         {yhdistelmaArtikkeliAuki && <LisaaYhdArtikkeli createYhdArtikkeli={lisaaYhdArtikkeli} />}
         {kirjaAuki && <h4>Tähän kirjan lisäys</h4>}
+        {doiAuki && <DOI />}
         <h2>Lähteet</h2>
         {/* tietokannan tyhennys */}
         <button onClick={clearDatabase}>Tyhjennä tietokanta</button>
