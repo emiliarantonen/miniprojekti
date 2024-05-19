@@ -183,3 +183,75 @@ test('Adding multiple composite articles and printing them to the site', async (
         }
     })
 })
+
+//Yksittäisen kirjan lisääminen ja tulostaminen
+test('Adding book and prints it to the site', async () => {
+    const user = userEvent.setup()
+    const { container } = render(<App />)
+
+    const kirjaButton = container.querySelector('#kirja-button')
+    await user.click(kirjaButton)
+
+    const keyInput = container.querySelector('#key-input')
+    const authorInput = container.querySelector('#author')
+    const titleInput = container.querySelector('#title')
+    const yearInput = container.querySelector('#year')
+    const publisherInput = container.querySelector('#publisher')
+    const sendButton = container.querySelector('#lisaa-button')
+  
+    await user.type(keyInput, `testkey`)
+    await user.type(authorInput, `test author`)
+    await user.type(titleInput, `test title`)
+    await user.type(yearInput, '2023')
+    await user.type(publisherInput, 'test publisher')
+    await user.click(sendButton)
+
+    await waitFor(() => {
+        const eka = screen.getByText(`test author.`)
+        expect(eka).toBeInTheDocument()
+        const toka = screen.getByText(`test title.`)
+        expect(toka).toBeInTheDocument()
+        const kolmas = screen.getByText(`test publisher,`)
+        expect(kolmas).toBeInTheDocument()
+        const neljas = screen.getByText(`2023.`)
+        expect(neljas).toBeInTheDocument()
+    })
+})
+
+//Usean kirjan lisääminen ja tulostaminen
+test('Adding multiple books  prints it to the site', async () => {
+    const user = userEvent.setup()
+    const { container } = render(<App />)
+
+    const kirjaButton = container.querySelector('#kirja-button')
+    await user.click(kirjaButton)
+
+    const keyInput = container.querySelector('#key-input')
+    const authorInput = container.querySelector('#author')
+    const titleInput = container.querySelector('#title')
+    const yearInput = container.querySelector('#year')
+    const publisherInput = container.querySelector('#publisher')
+    const sendButton = container.querySelector('#lisaa-button')
+  
+    for (let i = 0; i < 3; i++) {
+        await user.type(keyInput, `testkey${i}`)
+        await user.type(authorInput, `test author${i}`)
+        await user.type(titleInput, `test title${i}`)
+        await user.type(yearInput, `1${i}23`)
+        await user.type(publisherInput, `test publisher${i}`)
+        await user.click(sendButton)
+    }
+    
+    await waitFor(() => {
+        for (let i = 0; i < 3; i++) {
+            const eka = screen.getByText(`test author${i}.`)
+            expect(eka).toBeInTheDocument()
+            const toka = screen.getByText(`test title${i}.`)
+            expect(toka).toBeInTheDocument()
+            const kolmas = screen.getByText(`test publisher${i},`)
+            expect(kolmas).toBeInTheDocument()
+            const neljas = screen.getByText(`1${i}23.`)
+            expect(neljas).toBeInTheDocument()
+        }
+    })
+})

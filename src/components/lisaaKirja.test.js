@@ -15,7 +15,7 @@ test('A book is added properly with input data', async () => {
     const titleInput = container.querySelector('#title')
     const publisherInput = container.querySelector('#publisher')
     const yearInput = container.querySelector('#year')
-    const addButton = container.querySelector('#kirja-button')
+    const addButton = container.querySelector('#lisaa-button')
   
     // Täytetään lomake
     await user.type(keyInput, 'testkey')

@@ -110,7 +110,7 @@ const LisaaKirja = ({ createKirja }) => {
                 publisher: <input value={newPublisher} onChange={handlePublisherChange} id='publisher'/>
             </div>
             <div>
-                <button type="submit" id='kirja-button'>lisää</button>
+                <button type="submit" id='lisaa-button'>lisää</button>
             </div>
         </form>
     )
