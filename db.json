@@ -216,6 +216,20 @@
       "title": "koira",
       "year": "1234",
       "publisher": "otava"
+    },
+    {
+      "id": "8331",
+      "articleKey": "sama",
+      "author": [
+        {
+          "firstName": "testityyppi"
+        }
+      ],
+      "title": "fuksi",
+      "journal": "test journal",
+      "year": "2020",
+      "volume": "200",
+      "pages": "499"
     }
   ]
 }

@@ -25,28 +25,46 @@ function App() {
   }, [])
   console.log('render', artikkelit.length, 'artikkelit')
 
+  // tarkistetaan onko key jo olemassa, jos on niin antaa alertin 
+  //(artikkeli, yhdistelmäartikkeli ja kirja ok )
+  const isKeyDuplicate = (key) => {
+    return artikkelit.some(artikkeli => artikkeli.articleKey === key);
+  }
+  
   const lisaaArtikkeli = (artikkeliObject) => {
+    if (isKeyDuplicate(artikkeliObject.articleKey)) {
+      alert('The article key already exists. Please use a unique key.');
+      return;
+    }
     axios
-    .post('http://localhost:3001/artikkelit', artikkeliObject)
-    .then(response => {
-      setArtikkelit(artikkelit.concat(artikkeliObject))
-    })
+      .post('http://localhost:3001/artikkelit', artikkeliObject)
+      .then(response => {
+        setArtikkelit(artikkelit.concat(response.data))
+      })
   }
 
   const lisaaYhdArtikkeli = (artikkeliObject) => {
+    if (isKeyDuplicate(artikkeliObject.articleKey)) {
+      alert('The article key already exists. Please use a unique key.');
+      return;
+    }
     axios
-    .post('http://localhost:3001/artikkelit', artikkeliObject)
-    .then(response => {
-      setArtikkelit(artikkelit.concat(artikkeliObject))
-    })
+      .post('http://localhost:3001/artikkelit', artikkeliObject)
+      .then(response => {
+        setArtikkelit(artikkelit.concat(response.data))
+      })
   }
 
   const lisaaKirja = (artikkeliObject) => {
+    if (isKeyDuplicate(artikkeliObject.articleKey)) {
+      alert('The article key already exists. Please use a unique key.');
+      return;
+    }
     axios
-    .post('http://localhost:3001/artikkelit', artikkeliObject)
-    .then(response => {
-      setArtikkelit(artikkelit.concat(artikkeliObject))
-    })
+      .post('http://localhost:3001/artikkelit', artikkeliObject)
+      .then(response => {
+        setArtikkelit(artikkelit.concat(response.data))
+      })
   }
 
   // artikkelien järjestys kirjoittajan sukunimen perusteella
