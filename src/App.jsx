@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import Lisaa from './components/lisaa'
+import LisaaYhdArtikkeli from './components/lisaaYhdArtikkeli'
+import LisaaKirja from './components/lisaaKirja'
 import { saveAs } from 'file-saver'
 import './App.css'
-import LisaaYhdArtikkeli from './components/lisaaYhdArtikkeli'
+
 
 function App() {
   const [artikkelit, setArtikkelit] = useState([])
@@ -11,7 +13,6 @@ function App() {
   const [artikkeliAuki, setArtikkeliAuki] = useState(false);
   const [yhdistelmaArtikkeliAuki, setYhdistelmaArtikkeliAuki] = useState(false);
   const [kirjaAuki, setKirjaAuki] = useState(false);
-
 
   useEffect(() => {
     console.log('effect')
@@ -25,7 +26,6 @@ function App() {
   console.log('render', artikkelit.length, 'artikkelit')
 
   const lisaaArtikkeli = (artikkeliObject) => {
-
     axios
     .post('http://localhost:3001/artikkelit', artikkeliObject)
     .then(response => {
@@ -33,17 +33,21 @@ function App() {
     })
   }
 
-  //tä
   const lisaaYhdArtikkeli = (artikkeliObject) => {
-
     axios
     .post('http://localhost:3001/artikkelit', artikkeliObject)
     .then(response => {
       setArtikkelit(artikkelit.concat(artikkeliObject))
     })
-    console.log("talleta")
   }
 
+  const lisaaKirja = (artikkeliObject) => {
+    axios
+    .post('http://localhost:3001/artikkelit', artikkeliObject)
+    .then(response => {
+      setArtikkelit(artikkelit.concat(artikkeliObject))
+    })
+  }
 
   // artikkelien järjestys kirjoittajan sukunimen perusteella
   const jarjastaArtikkelit = () => {
@@ -72,6 +76,14 @@ function App() {
           booktitle = {${artikkeli.booktitle}}
           }`
 
+      if (artikkeli.publisher) 
+        return `@book{${artikkeli.articleKey},
+          author = {${authors}},
+          title = {${artikkeli.title}},
+          year = {${artikkeli.year}},
+          publisher = {${artikkeli.publisher}}
+          }`
+
       return `@article{${artikkeli.articleKey},
               author = {${authors}},
               title = {${artikkeli.title}},
@@ -96,7 +108,6 @@ function App() {
   }
   
   //Tarvittaessa tietokannan tyhennystä varten 
-
   const clearDatabase = async () => {
     try {
       const response = await axios.get('http://localhost:3001/artikkelit');
@@ -148,7 +159,7 @@ function App() {
         <button id='kirja-button'onClick={toggleKirja}> Lisää kirja </button>
         {artikkeliAuki && <Lisaa createArtikkeli={lisaaArtikkeli} />}
         {yhdistelmaArtikkeliAuki && <LisaaYhdArtikkeli createYhdArtikkeli={lisaaYhdArtikkeli} />}
-        {kirjaAuki && <h4>Tähän kirjan lisäys</h4>}
+        {kirjaAuki && <LisaaKirja createKirja={lisaaKirja} />}
         <h2>Lähteet</h2>
         {/* tietokannan tyhennys */}
         <button onClick={clearDatabase}>Tyhjennä tietokanta</button>
@@ -182,6 +193,12 @@ function App() {
             artikkeli.booktitle &&
             <>
               <p>{artikkeli.booktitle},</p>
+            </>
+          }
+          {
+            artikkeli.publisher &&
+            <>
+              <p>{artikkeli.publisher},</p>
             </>
           }
           <p>{artikkeli.year}.</p>
