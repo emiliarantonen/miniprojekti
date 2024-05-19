@@ -39,8 +39,8 @@ function App() {
     axios
       .post('http://localhost:3001/artikkelit', artikkeliObject)
       .then(response => {
-        setArtikkelit(artikkelit.concat(response.data))
-      })
+        setArtikkelit(artikkelit.concat(artikkeliObject))
+    })
   }
 
   const lisaaYhdArtikkeli = (artikkeliObject) => {
@@ -51,7 +51,7 @@ function App() {
     axios
       .post('http://localhost:3001/artikkelit', artikkeliObject)
       .then(response => {
-        setArtikkelit(artikkelit.concat(response.data))
+        setArtikkelit(artikkelit.concat(artikkeliObject))
       })
   }
 
@@ -63,7 +63,7 @@ function App() {
     axios
       .post('http://localhost:3001/artikkelit', artikkeliObject)
       .then(response => {
-        setArtikkelit(artikkelit.concat(response.data))
+        setArtikkelit(artikkelit.concat(artikkeliObject))
       })
   }
 
