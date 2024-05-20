@@ -155,6 +155,70 @@
         "2021 Second International Conference on Electronics and Sustainable Communication Systems (ICESC)"
       ],
       "DOI": "10.1109/icesc51422.2021.9532842"
+    },
+    {
+      "id": "46ee",
+      "articleKey": "123123",
+      "author": [
+        {
+          "firstName": "J.",
+          "lastName": "Leppäluoto"
+        },
+        {
+          "firstName": "T.",
+          "lastName": "Pääkkönen"
+        },
+        {
+          "firstName": "I.",
+          "lastName": "Korhonen"
+        },
+        {
+          "firstName": "J.",
+          "lastName": "Hassi"
+        }
+      ],
+      "title": [
+        "Pituitary and autonomic responses to cold exposures in man"
+      ],
+      "journal": [
+        "Acta Physiologica Scandinavica"
+      ],
+      "year": 2005,
+      "volume": "184",
+      "pages": "255-264",
+      "DOI": "10.1111/j.1365-201x.2005.01464.x"
+    },
+    {
+      "id": "7806",
+      "articleKey": "123123123",
+      "author": [
+        {
+          "firstName": "J.",
+          "lastName": "Leppäluoto"
+        },
+        {
+          "firstName": "T.",
+          "lastName": "Pääkkönen"
+        },
+        {
+          "firstName": "I.",
+          "lastName": "Korhonen"
+        },
+        {
+          "firstName": "J.",
+          "lastName": "Hassi"
+        }
+      ],
+      "title": [
+        "Pituitary and autonomic responses to cold exposures in man"
+      ],
+      "journal": [
+        "Acta Physiologica Scandinavica"
+      ],
+      "year": 2005,
+      "volume": "184",
+      "pages": "255-264",
+      "DOI": "10.1111/j.1365-201x.2005.01464.x"
     }
   ]
 }
