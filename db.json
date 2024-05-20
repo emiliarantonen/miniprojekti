@@ -1,235 +1,138 @@
 {
   "artikkelit": [
     {
-      "id": "160a",
-      "articleKey": "testkey",
+      "id": "f6ba",
+      "articleKey": "zayat2021",
       "author": [
         {
-          "firstName": "Author",
-          "lastName": "Test"
-        }
-      ],
-      "title": "test title",
-      "journal": "test journal",
-      "year": "2023",
-      "volume": "test volume",
-      "pages": "22-45"
-    },
-    {
-      "id": "cfcc",
-      "articleKey": "testkey",
-      "author": [
-        {
-          "firstName": "Test",
-          "lastName": "Author"
-        }
-      ],
-      "title": "test title",
-      "journal": "test journal",
-      "year": "2023",
-      "volume": "test volume",
-      "pages": "22-45"
-    },
-    {
-      "id": "7d35",
-      "articleKey": "testkey",
-      "author": [
-        {
-          "firstName": "Yeet",
-          "lastName": "Test"
-        }
-      ],
-      "title": "test title",
-      "journal": "test journal",
-      "year": "2023",
-      "volume": "test volume",
-      "pages": "22-45"
-    },
-    {
-      "id": "092d",
-      "articleKey": "testkey",
-      "author": [
-        {
-          "firstName": "Author",
-          "lastName": "Test"
-        }
-      ],
-      "title": "2nd test title",
-      "journal": "test journal",
-      "year": "2023",
-      "volume": "test volume",
-      "pages": "22-45"
-    },
-    {
-      "id": "a5e1",
-      "articleKey": "testkey",
-      "author": [
-        {
-          "firstName": "Ceed",
-          "lastName": "Test"
-        }
-      ],
-      "title": "test title",
-      "journal": "test journal",
-      "year": "2023",
-      "volume": "test volume",
-      "pages": "22-45"
-    },
-    {
-      "id": "db06",
-      "articleKey": "testkey",
-      "author": [
-        {
-          "firstName": "Beed",
-          "lastName": "Test"
-        }
-      ],
-      "title": "test title",
-      "journal": "test journal",
-      "year": "2023",
-      "volume": "test volume",
-      "pages": "22-45"
-    },
-    {
-      "id": "a439",
-      "articleKey": "testkey",
-      "author": [
-        {
-          "firstName": "Beed",
-          "lastName": "Beed"
-        }
-      ],
-      "title": "test title",
-      "journal": "test journal",
-      "year": "2023",
-      "volume": "test volume",
-      "pages": "22-45"
-    },
-    {
-      "id": "307a",
-      "articleKey": "testkey",
-      "author": [
-        {
-          "firstName": "Author",
-          "lastName": "Authorer"
-        }
-      ],
-      "title": "test title",
-      "journal": "test journal",
-      "year": "2023",
-      "volume": "test volume",
-      "pages": "22-45"
-    },
-    {
-      "id": "7ce0",
-      "articleKey": "01925",
-      "author": [
-        {
-          "firstName": "etu",
-          "lastName": "suku"
-        }
-      ],
-      "title": "title",
-      "journal": "journal",
-      "year": "2000",
-      "volume": "vol1:",
-      "pages": "123-222"
-    },
-    {
-      "id": "7389",
-      "articleKey": "0125",
-      "author": [
-        {
-          "firstName": "Etunimi",
-          "lastName": "Sukunimi"
+          "firstName": "Wael",
+          "lastName": "Zayat"
         },
         {
-          "firstName": "Etuvili",
-          "lastName": "Sukunimi"
+          "firstName": "Ozlem",
+          "lastName": "Senvar"
         }
       ],
-      "title": "title",
-      "year": "2000",
-      "booktitle": "booktitle"
+      "title": [
+        "Framework Study for Agile Software Development Via Scrum and Kanban"
+      ],
+      "journal": [
+        "International Journal of Innovation and Technology Management"
+      ],
+      "year": 2020,
+      "volume": "17",
+      "DOI": "10.1142/s0219877020300025"
     },
     {
-      "id": "394f",
-      "articleKey": "123",
+      "id": "b477",
+      "articleKey": "thesing2021",
       "author": [
         {
-          "firstName": "fuksi",
-          "lastName": "eelis"
+          "firstName": "Theo",
+          "lastName": "Thesing"
+        },
+        {
+          "firstName": "Carsten",
+          "lastName": "Feldmann"
+        },
+        {
+          "firstName": "Martin",
+          "lastName": "Burchardt"
         }
       ],
-      "title": "123",
-      "year": "1233",
-      "booktitle": "123"
+      "title": [
+        "Agile versus Waterfall Project Management: Decision Model for Selecting the Appropriate Approach to a Project"
+      ],
+      "journal": [
+        "Procedia Computer Science"
+      ],
+      "year": 2021,
+      "volume": "181",
+      "pages": "746-756",
+      "DOI": "10.1016/j.procs.2021.01.227"
     },
     {
-      "id": "c274",
-      "articleKey": "123",
+      "id": "888f",
+      "articleKey": "planningpoker",
       "author": [
         {
-          "firstName": "fuksi",
-          "lastName": "eelis"
+          "firstName": "Pantjawati",
+          "lastName": "Sudarmaningtyas"
+        },
+        {
+          "firstName": "Rozlina Binti",
+          "lastName": "Mohamed"
         }
       ],
-      "title": "koira",
-      "year": "1234",
-      "publisher": "otava"
+      "title": [
+        "Extended Planning Poker: A Proposed Model"
+      ],
+      "year": 2020,
+      "booktitle": [
+        "2020 7th International Conference on Information Technology, Computer, and Electrical Engineering (ICITACEE)"
+      ],
+      "DOI": "10.1109/icitacee50144.2020.9239165"
     },
     {
-      "id": "4619",
-      "articleKey": "123",
+      "id": "cc0c",
+      "articleKey": "nicholas2020",
       "author": [
         {
-          "firstName": "fuksi",
-          "lastName": "eelis"
+          "firstName": "John M.",
+          "lastName": "Nicholas"
+        },
+        {
+          "firstName": "Herman",
+          "lastName": "Steyn"
         }
       ],
-      "title": "koira",
-      "year": "1234",
-      "publisher": "otava"
+      "title": [
+        "Project Management for Engineering, Business and Technology"
+      ],
+      "year": 2020,
+      "publisher": "Routledge",
+      "DOI": "10.4324/9780429297588"
     },
     {
-      "id": "859a",
-      "articleKey": "123",
+      "id": "00f7",
+      "articleKey": "factors",
       "author": [
         {
-          "firstName": "fuksi",
-          "lastName": "eelis"
+          "firstName": "Safa Mohammed Ahmed",
+          "lastName": "Suliman"
+        },
+        {
+          "firstName": "Gada",
+          "lastName": "Kadoda"
         }
       ],
-      "title": "koira",
-      "year": "1234",
-      "publisher": "otava"
+      "title": [
+        "Factors that influence software project cost and schedule estimation"
+      ],
+      "year": 2018,
+      "booktitle": [
+        "2017 Sudan Conference on Computer Science and Information Technology (SCCSIT)"
+      ],
+      "DOI": "10.1109/sccsit.2017.8293053"
     },
     {
-      "id": "55ba",
-      "articleKey": "123",
+      "id": "2946",
+      "articleKey": "key0",
       "author": [
         {
-          "firstName": "fuksi",
-          "lastName": "eelis"
-        }
-      ],
-      "title": "koira",
-      "year": "1234",
-      "publisher": "otava"
-    },
-    {
-      "id": "8331",
-      "articleKey": "sama",
-      "author": [
+          "firstName": "Emilia",
+          "lastName": "Rantonen"
+        },
         {
-          "firstName": "testityyppi"
+          "firstName": "Minea",
+          "lastName": "Nupponen"
         }
       ],
-      "title": "fuksi",
-      "journal": "test journal",
-      "year": "2020",
-      "volume": "200",
-      "pages": "499"
+      "title": "Tutkimus",
+      "journal": "Journal",
+      "year": "2022",
+      "volume": "100",
+      "pages": "22-45"
     }
   ]
 }

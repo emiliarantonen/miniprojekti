@@ -68,6 +68,19 @@ function App() {
       })
   }
 
+  const lisaaDOI = (reference) => {
+    if (isKeyDuplicate(reference.articleKey)) {
+      alert('The article key already exists. Please use a unique key.')
+      return
+    }
+    axios
+      .post('http://localhost:3001/artikkelit', reference)
+      .then(response => {
+        setArtikkelit(artikkelit.concat(reference))
+    })
+  }
+
+
   // artikkelien järjestys kirjoittajan sukunimen perusteella
   const jarjastaArtikkelit = () => {
     const sortedArticles = [...artikkelit].sort((a, b) => {
@@ -86,13 +99,16 @@ function App() {
     // Funktio BibTeX-muotoisen merkkijonon rakentamiseksi
     const generateBibTeX = (artikkeli) => {
       const authors = artikkeli.author.map(author => `${author.lastName}, ${author.firstName}`).join(' and ')
+      const doi = artikkeli.DOI ? `doi = {${artikkeli.DOI}}` : ''
+      console.log('DOI:', doi)
 
       if (artikkeli.booktitle)
         return `@inproceedings{${artikkeli.articleKey},
           author = {${authors}},
           title = {${artikkeli.title}},
           year = {${artikkeli.year}},
-          booktitle = {${artikkeli.booktitle}}
+          booktitle = {${artikkeli.booktitle}},
+          ${doi}
           }`
 
       if (artikkeli.publisher) 
@@ -100,7 +116,8 @@ function App() {
           author = {${authors}},
           title = {${artikkeli.title}},
           year = {${artikkeli.year}},
-          publisher = {${artikkeli.publisher}}
+          publisher = {${artikkeli.publisher}},
+          ${doi}
           }`
 
       return `@article{${artikkeli.articleKey},
@@ -109,7 +126,8 @@ function App() {
               journal = {${artikkeli.journal}},
               year = {${artikkeli.year}},
               volume = {${artikkeli.volume}},
-              pages = {${artikkeli.pages}}
+              pages = {${artikkeli.pages}},
+              ${doi}
             }`
     }
 
@@ -196,7 +214,7 @@ function App() {
         {artikkeliAuki && <Lisaa createArtikkeli={lisaaArtikkeli} />}
         {yhdistelmaArtikkeliAuki && <LisaaYhdArtikkeli createYhdArtikkeli={lisaaYhdArtikkeli} />}
         {kirjaAuki && <LisaaKirja createKirja={lisaaKirja} />}
-        {doiAuki && <DOI />}
+        {doiAuki && <DOI createByDOI={lisaaDOI} />}
         <h2>Lähteet</h2>
         {/* tietokannan tyhennys */}
         <button onClick={clearDatabase}>Tyhjennä tietokanta</button>
