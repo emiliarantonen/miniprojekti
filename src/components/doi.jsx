@@ -97,7 +97,7 @@ const DOI = ({createByDOI}) => {
           type="text"
           value={doi}
           onChange={handleInputChange}
-          id='DOI-input'
+          id='doi-input'
           placeholder="Syötä DOI-tunniste"
         />
         <button onClick={handleSearch} id='hae-button'>Hae</button>
