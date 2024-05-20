@@ -5,7 +5,6 @@ const DOI = ({createByDOI}) => {
     const [newKey, setNewKey] = useState('')
     const [doi, setDoi] = useState('')
     const [reference, setReference] = useState(null)
-    const [tuloste, setTuloste] = useState('')
 
     useEffect(() => {
         console.log('effect')
@@ -86,9 +85,6 @@ const DOI = ({createByDOI}) => {
 
         setNewKey('')
         setDoi('')
-
-        setTuloste(JSON.stringify(newReference))
-
         
     }
 
@@ -104,12 +100,6 @@ const DOI = ({createByDOI}) => {
           placeholder="Syötä DOI-tunniste"
         />
         <button onClick={handleSearch}>Hae</button>
-        {reference && (
-        <div>
-          <h2>Lähdeviite</h2>
-          <p>{tuloste}</p>
-        </div>
-        )}
         </div>
     )
 

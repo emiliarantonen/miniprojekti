@@ -133,6 +133,28 @@
       "year": "2022",
       "volume": "100",
       "pages": "22-45"
+    },
+    {
+      "id": "0b39",
+      "articleKey": "effectOfAgile",
+      "author": [
+        {
+          "firstName": "Ashvini R.",
+          "lastName": "Chaudhari"
+        },
+        {
+          "firstName": "Shashank D.",
+          "lastName": "Joshi"
+        }
+      ],
+      "title": [
+        "Study of effect of Agile software development Methodology on Software Development Process"
+      ],
+      "year": 2021,
+      "booktitle": [
+        "2021 Second International Conference on Electronics and Sustainable Communication Systems (ICESC)"
+      ],
+      "DOI": "10.1109/icesc51422.2021.9532842"
     }
   ]
 }
