@@ -101,34 +101,40 @@ function App() {
       const authors = artikkeli.author.map(author => `${author.lastName}, ${author.firstName}`).join(' and ')
       const doi = artikkeli.DOI ? `doi = {${artikkeli.DOI}}` : ''
       console.log('DOI:', doi)
+      let ret = ""
 
-      if (artikkeli.booktitle)
-        return `@inproceedings{${artikkeli.articleKey},
-          author = {${authors}},
-          title = {${artikkeli.title}},
-          year = {${artikkeli.year}},
-          booktitle = {${artikkeli.booktitle}},
-          ${doi}
-          }`
+      if (artikkeli.booktitle) {
+        ret = `@inproceedings{${artikkeli.articleKey},
+               author = {${authors}},
+               title = {${artikkeli.title}},
+               booktitle = {${artikkeli.booktitle}},
+               year = {${artikkeli.year}}`
+      }
+        
+      else if (artikkeli.publisher) {
+        ret = `@book{${artikkeli.articleKey},
+               author = {${authors}},
+               title = {${artikkeli.title}},
+               publisher = {${artikkeli.publisher}},
+               year = {${artikkeli.year}}`               
+      }
 
-      if (artikkeli.publisher) 
-        return `@book{${artikkeli.articleKey},
-          author = {${authors}},
-          title = {${artikkeli.title}},
-          year = {${artikkeli.year}},
-          publisher = {${artikkeli.publisher}},
-          ${doi}
-          }`
+      else {
+        ret = `@article{${artikkeli.articleKey},
+               author = {${authors}},
+               title = {${artikkeli.title}},
+               journal = {${artikkeli.journal}},
+               volume = {${artikkeli.volume}},
+               pages = {${artikkeli.pages}},
+               year = {${artikkeli.year}}`
+      }
 
-      return `@article{${artikkeli.articleKey},
-              author = {${authors}},
-              title = {${artikkeli.title}},
-              journal = {${artikkeli.journal}},
-              year = {${artikkeli.year}},
-              volume = {${artikkeli.volume}},
-              pages = {${artikkeli.pages}},
-              ${doi}
-            }`
+      if (doi) {
+        ret += `,
+               ${doi}`
+      }
+      
+      return ret + "\n}"
     }
 
   //Luodaan sisältö valmiiksi tallennettavaa bibtex-tiedostoa varten
