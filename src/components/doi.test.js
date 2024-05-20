@@ -31,6 +31,7 @@ axios.get.mockResolvedValue({ data: mockData })
 test('Article is added using a working DOI', async () => {
     const user = userEvent.setup()
     const lisaaDOI = jest.fn()
+    window.alert = jest.fn()
 
     const { container } = render(<DOI createByDOI={lisaaDOI} />)
 
@@ -79,5 +80,23 @@ test('Article is added using a working DOI', async () => {
     //Tarkastetaan onko datan hakemiseen käytetty syötettyä DOI:ta
     await waitFor(() => {
         expect(axios.get).toHaveBeenCalledWith('https://api.crossref.org/works/10.1111/j.1365-201x.2005.01464.x')
+    })
+})
+
+test('Article is not added when article key isn\'t entered', async () => {
+    const user = userEvent.setup()
+    const lisaaDOI = jest.fn()
+    window.alert = jest.fn()
+
+    const { container } = render(<DOI createByDOI={lisaaDOI} />)
+
+    const doiInput = container.querySelector("#doi-input")
+    const haeButton = container.querySelector("#hae-button")
+
+    await user.type(doiInput, '10.1111/j.1365-201x.2005.01464.x')
+    await user.click(haeButton)
+
+    await waitFor(() => {
+        expect(lisaaDOI).toHaveBeenCalledTimes(0)
     })
 })
