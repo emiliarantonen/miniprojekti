@@ -134,6 +134,102 @@
       "year": "2000",
       "volume": "vol1:",
       "pages": "123-222"
+    },
+    {
+      "id": "7389",
+      "articleKey": "0125",
+      "author": [
+        {
+          "firstName": "Etunimi",
+          "lastName": "Sukunimi"
+        },
+        {
+          "firstName": "Etuvili",
+          "lastName": "Sukunimi"
+        }
+      ],
+      "title": "title",
+      "year": "2000",
+      "booktitle": "booktitle"
+    },
+    {
+      "id": "394f",
+      "articleKey": "123",
+      "author": [
+        {
+          "firstName": "fuksi",
+          "lastName": "eelis"
+        }
+      ],
+      "title": "123",
+      "year": "1233",
+      "booktitle": "123"
+    },
+    {
+      "id": "c274",
+      "articleKey": "123",
+      "author": [
+        {
+          "firstName": "fuksi",
+          "lastName": "eelis"
+        }
+      ],
+      "title": "koira",
+      "year": "1234",
+      "publisher": "otava"
+    },
+    {
+      "id": "4619",
+      "articleKey": "123",
+      "author": [
+        {
+          "firstName": "fuksi",
+          "lastName": "eelis"
+        }
+      ],
+      "title": "koira",
+      "year": "1234",
+      "publisher": "otava"
+    },
+    {
+      "id": "859a",
+      "articleKey": "123",
+      "author": [
+        {
+          "firstName": "fuksi",
+          "lastName": "eelis"
+        }
+      ],
+      "title": "koira",
+      "year": "1234",
+      "publisher": "otava"
+    },
+    {
+      "id": "55ba",
+      "articleKey": "123",
+      "author": [
+        {
+          "firstName": "fuksi",
+          "lastName": "eelis"
+        }
+      ],
+      "title": "koira",
+      "year": "1234",
+      "publisher": "otava"
+    },
+    {
+      "id": "8331",
+      "articleKey": "sama",
+      "author": [
+        {
+          "firstName": "testityyppi"
+        }
+      ],
+      "title": "fuksi",
+      "journal": "test journal",
+      "year": "2020",
+      "volume": "200",
+      "pages": "499"
     }
   ]
 }

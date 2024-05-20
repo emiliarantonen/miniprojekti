@@ -1,7 +1,6 @@
 import { useState } from 'react'
 
 const LisaaYhdArtikkeli = ({ createYhdArtikkeli }) => {
-
   const [newYhdArtikkeli, setNewYhdArtikkeli] = useState('')
   const [newKey, setNewKey] = useState('')
   const [newAuthors, setNewAuthors] = useState('')
@@ -10,13 +9,10 @@ const LisaaYhdArtikkeli = ({ createYhdArtikkeli }) => {
   const [newYear, setNewYear] = useState('')
   const [newBookTitle, setNewBookTitle] = useState('')
 
-  //tarkistus että vuosinumero on 4 numeroa pitkä
-  //ja pienempi kuin tämä vuosi + 1
   const validateYear = (year) => {
     const currentYear = new Date().getFullYear();
     return /^\d{4}$/.test(year) && parseInt(year) < currentYear+1;
   }
-
 
   const addYhdArtikkeli = (event) => {
     event.preventDefault()

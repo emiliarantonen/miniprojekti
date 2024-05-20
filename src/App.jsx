@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import Lisaa from './components/lisaa'
+import LisaaYhdArtikkeli from './components/lisaaYhdArtikkeli'
+import LisaaKirja from './components/lisaaKirja'
 import { saveAs } from 'file-saver'
 import './App.css'
-import LisaaYhdArtikkeli from './components/lisaaYhdArtikkeli'
 import DOI from './components/doi'
 
 function App() {
@@ -13,7 +14,6 @@ function App() {
   const [yhdistelmaArtikkeliAuki, setYhdistelmaArtikkeliAuki] = useState(false);
   const [kirjaAuki, setKirjaAuki] = useState(false);
   const [doiAuki, setDOIAuki] = useState(false)
-
 
   useEffect(() => {
     console.log('effect')
@@ -26,26 +26,47 @@ function App() {
   }, [])
   console.log('render', artikkelit.length, 'artikkelit')
 
+  // tarkistetaan onko key jo olemassa, jos on niin antaa alertin 
+  //(artikkeli, yhdistelmäartikkeli ja kirja ok )
+  const isKeyDuplicate = (key) => {
+    return artikkelit.some(artikkeli => artikkeli.articleKey === key);
+  }
+  
   const lisaaArtikkeli = (artikkeliObject) => {
-
+    if (isKeyDuplicate(artikkeliObject.articleKey)) {
+      alert('The article key already exists. Please use a unique key.');
+      return;
+    }
     axios
-    .post('http://localhost:3001/artikkelit', artikkeliObject)
-    .then(response => {
-      setArtikkelit(artikkelit.concat(artikkeliObject))
+      .post('http://localhost:3001/artikkelit', artikkeliObject)
+      .then(response => {
+        setArtikkelit(artikkelit.concat(artikkeliObject))
     })
   }
 
-  //tä
   const lisaaYhdArtikkeli = (artikkeliObject) => {
-
+    if (isKeyDuplicate(artikkeliObject.articleKey)) {
+      alert('The article key already exists. Please use a unique key.');
+      return;
+    }
     axios
-    .post('http://localhost:3001/artikkelit', artikkeliObject)
-    .then(response => {
-      setArtikkelit(artikkelit.concat(artikkeliObject))
-    })
-    console.log("talleta")
+      .post('http://localhost:3001/artikkelit', artikkeliObject)
+      .then(response => {
+        setArtikkelit(artikkelit.concat(artikkeliObject))
+      })
   }
 
+  const lisaaKirja = (artikkeliObject) => {
+    if (isKeyDuplicate(artikkeliObject.articleKey)) {
+      alert('The article key already exists. Please use a unique key.');
+      return;
+    }
+    axios
+      .post('http://localhost:3001/artikkelit', artikkeliObject)
+      .then(response => {
+        setArtikkelit(artikkelit.concat(artikkeliObject))
+      })
+  }
 
   // artikkelien järjestys kirjoittajan sukunimen perusteella
   const jarjastaArtikkelit = () => {
@@ -74,6 +95,14 @@ function App() {
           booktitle = {${artikkeli.booktitle}}
           }`
 
+      if (artikkeli.publisher) 
+        return `@book{${artikkeli.articleKey},
+          author = {${authors}},
+          title = {${artikkeli.title}},
+          year = {${artikkeli.year}},
+          publisher = {${artikkeli.publisher}}
+          }`
+
       return `@article{${artikkeli.articleKey},
               author = {${authors}},
               title = {${artikkeli.title}},
@@ -98,7 +127,6 @@ function App() {
   }
   
   //Tarvittaessa tietokannan tyhennystä varten 
-
   const clearDatabase = async () => {
     try {
       const response = await axios.get('http://localhost:3001/artikkelit');
@@ -167,7 +195,7 @@ function App() {
         <button id='doi-button'onClick={toggleDOI}> Lisää DOI-tunnisteella </button>
         {artikkeliAuki && <Lisaa createArtikkeli={lisaaArtikkeli} />}
         {yhdistelmaArtikkeliAuki && <LisaaYhdArtikkeli createYhdArtikkeli={lisaaYhdArtikkeli} />}
-        {kirjaAuki && <h4>Tähän kirjan lisäys</h4>}
+        {kirjaAuki && <LisaaKirja createKirja={lisaaKirja} />}
         {doiAuki && <DOI />}
         <h2>Lähteet</h2>
         {/* tietokannan tyhennys */}
@@ -202,6 +230,12 @@ function App() {
             artikkeli.booktitle &&
             <>
               <p>{artikkeli.booktitle},</p>
+            </>
+          }
+          {
+            artikkeli.publisher &&
+            <>
+              <p>{artikkeli.publisher},</p>
             </>
           }
           <p>{artikkeli.year}.</p>
