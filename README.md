@@ -5,7 +5,7 @@ https://docs.google.com/spreadsheets/d/1Gsr3Gd2iyZmrTRKqvm99LjeILFEUfS0wMb-DURPm
 
 ## Testauskattavuusraportti
 
-Testikattavuusraportti on saatavilla [täällä](https://emiliarantonen.github.io/miniprojekti/coverage/lcov-report/index.html).   
+Testikattavuusraportti on saatavilla [täällä](https://emiliarantonen.github.io/miniprojekti/coverage/lcov-report/src/index.html).   
 
 ## Projektin käyttöönotto
 
