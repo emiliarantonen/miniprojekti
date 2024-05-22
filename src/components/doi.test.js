@@ -135,4 +135,3 @@ test('Article is not added when article key is duplicate', async () => {
         expect(window.alert).toHaveBeenCalledWith('The article key already exists. Please use a unique key.')
     })
 })
->>>>>>> main
