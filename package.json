@@ -41,7 +41,20 @@
     "moduleNameMapper": {
       "^.+\\.svg$": "jest-svg-transformer",
       "^.+\\.(css|less|scss)$": "identity-obj-proxy"
-    }
+    },
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!**/node_modules/**"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "src/main.jsx"
+    ],
+    "coverageReporters": [
+      "lcov",
+      "text"
+    ]
   },
   "transform": {
     "^.+\\.jsx?$": "babel-jest"
