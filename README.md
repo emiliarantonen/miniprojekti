@@ -21,3 +21,7 @@ Testauskattavuus raportti päivitetään komennolla
 'npm test -- --coverage --collectCoverageFrom='src/**/*.{jsx,js} --collectCoverageFrom='src/*.{jsx,js}'
 
 ![GHA workflow badgee](https://github.com/emiliarantonen/miniprojekti/workflows/CI/badge.svg)
+
+## Raportti
+
+Linkki raporttiin on saatavilla [täältä](https://docs.google.com/document/d/1mZ5GOVSmoDhhYIUPLqW1Q2tnCRpM3boQfzdAPppOw1Q/edit?usp=sharing).
